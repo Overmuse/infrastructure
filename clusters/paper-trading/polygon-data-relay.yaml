@@ -9,4 +9,5 @@ spec:
   interval: 1m0s
   secretRef:
     name: aws-secret
+    namespace: default
 
