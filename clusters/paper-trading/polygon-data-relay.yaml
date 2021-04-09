@@ -7,4 +7,6 @@ metadata:
 spec:
   image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/polygon-data-relay
   interval: 1m0s
+  secretRef:
+    name: ecr-credentials
 
