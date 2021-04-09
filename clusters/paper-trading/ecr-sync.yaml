@@ -1,0 +1,50 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: ecr-credentials-sync
+  namespace: flux-system
+rules:
+- apiGroups: [""]
+  resources:
+  - secrets
+  verbs:
+  - delete
+  - create
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: ecr-credentials-sync
+  namespace: flux-system
+subjects:
+- kind: ServiceAccount
+  name: ecr-credentials-sync
+roleRef:
+  kind: Role
+  name: ecr-credentials-sync
+  apiGroup: ""
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecr-credentials-sync
+  namespace: flux-system
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::799439856592:role/FluxECRSync
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: ecr-credentials-sync
+  namespace: flux-system
+spec:
+  suspend: false
+  schedule: * * * * *
+  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: ecr-credentials-sync
+          restartPolicy: Never
