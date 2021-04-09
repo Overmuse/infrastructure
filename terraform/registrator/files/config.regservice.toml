@@ -1,0 +1,6 @@
+[regservice]
+stop_file = "/tmp/stopregservice"
+log_level = "debug"
+port = 5555
+user = "RollenRegistratorBot"
+email = "rollenseb+RegistratorBot@gmail.com"

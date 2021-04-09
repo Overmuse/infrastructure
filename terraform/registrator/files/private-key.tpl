@@ -1,0 +1,1 @@
+<<registrator/registrator_key>>
