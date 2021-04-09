@@ -1,0 +1,15 @@
+version: "3"
+services:
+  registrator:
+    build: .
+    ports:
+      -  "8081:8081"
+      -  "5555:5555"
+    expose:
+      - "8081"
+      - "5555"
+    container_name: registrator
+    command: >
+      bash -c "julia -e 'using Registrator; Registrator.CommentBot.main()' config.commentbot.toml &
+               julia -e 'using Registrator; Registrator.RegService.main()' config.regservice.toml"
+    restart: always

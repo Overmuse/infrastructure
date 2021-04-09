@@ -1,0 +1,51 @@
+#!/bin/bash
+
+set -x
+DOCKER_DIR='/opt/run/'
+
+echo "Bootstrap Script"
+
+echo 'Install Docker CE'
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+
+apt update
+
+apt-cache policy docker-ce
+
+apt install docker-ce -y
+
+usermod -aG docker ${user}
+
+
+echo 'Install Docker Compose'
+apt update
+
+apt install docker-compose -y
+
+
+echo 'Install Julia RegServer and Docker files'
+mkdir -p $DOCKER_DIR
+pushd $DOCKER_DIR
+
+aws s3 cp s3://${bucket}/gitconfig .gitconfig
+aws s3 cp s3://${bucket}/git-credentials.tpl .
+aws s3 cp s3://${bucket}/config.commentbot.tpl .
+aws s3 cp s3://${bucket}/config.regservice.toml .
+aws s3 cp s3://${bucket}/commentbot.sh .
+aws s3 cp s3://${bucket}/regservice.sh .
+aws s3 cp s3://${bucket}/Dockerfile .
+aws s3 cp s3://${bucket}/docker-compose.yml .
+aws s3 cp s3://${bucket}/private-key.tpl .
+
+populate_secrets -f config.commentbot.tpl > config.commentbot.toml
+populate_secrets -f git-credentials.tpl > .git-credentials
+populate_secrets -f private-key.tpl > encoded-private-key.pem
+base64 -d encoded-private-key.pem > private-key.pem
+
+echo 'Start Registrator'
+
+docker-compose -p registrator -f docker-compose.yml up -d
+
+popd

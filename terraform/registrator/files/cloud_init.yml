@@ -1,0 +1,19 @@
+#cloud-config
+
+package_update: true
+package_upgrade: true
+timezone: /Etc/UTC
+resize_rootfs: true
+packages:
+    - openssh-server
+    - ca-certificates
+    - apt-transport-https
+    - software-properties-common
+    - awscli
+
+runcmd:
+    - [ sh, -c, 'aws s3 cp s3://${bucket}/bootstrap /usr/local/bin/bootstrap']
+    - [ sh, -c, "chmod 0755 /usr/local/bin/bootstrap"]
+    - [ sh, -c, 'aws s3 cp s3://aiaia-dev-tools/populate_secrets /usr/local/bin/populate_secrets']
+    - [ sh, -c, "chmod 0755 /usr/local/bin/populate_secrets"] 
+    - [ sh, -c, "bootstrap"]
