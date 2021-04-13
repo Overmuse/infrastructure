@@ -29,7 +29,7 @@ spec:
           - name: DATABASE__URL
             valueFrom:
               secretKeyRef:
-                name: mongo
+                name: mongo-secret
                 key: MONGO__URL
         envFrom:
         - secretRef:
