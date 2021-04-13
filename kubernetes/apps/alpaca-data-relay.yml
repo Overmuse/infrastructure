@@ -6,7 +6,6 @@ data:
   KAFKA__BOOTSTRAP_SERVERS: pkc-ep9mm.us-east-2.aws.confluent.cloud:9092
   KAFKA__GROUP_ID: alpaca-data-relay
   KAFKA__SECURITY_PROTOCOL: SASL_SSL
-  ALPACA__STREAMING_URL: wss://paper-api.alpaca.markets/stream
   ALPACA__ACCOUNT_UPDATES: "true"
   ALPACA__TRADE_UPDATES: "true"
   RUST_LOG: debug
@@ -30,6 +29,8 @@ spec:
       - name: alpaca-data-relay
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:${IMAGE_TAG}
         envFrom:
+        - configMapRef:
+            name: alpaca-cm
         - configMapRef:
             name: alpaca-data-relay-cm
         - configMapRef:

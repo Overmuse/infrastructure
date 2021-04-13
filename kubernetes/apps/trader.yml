@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   name: trader-cm
 data:
-  ALPACA__BASE_URL: https://paper-api.alpaca.markets/v2
   KAFKA__GROUP_ID: trader
   KAFKA__INPUT_TOPICS: order-intents
 
@@ -32,5 +31,7 @@ spec:
             name: kafka-secret
         - configMapRef:
             name: trader-cm
+        - configMapRef:
+            name: alpaca-cm
         - configMapRef:
             name: kafka-cm
