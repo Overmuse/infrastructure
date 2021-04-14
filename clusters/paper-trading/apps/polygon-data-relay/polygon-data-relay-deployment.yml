@@ -12,7 +12,6 @@ data:
   POLYGON__SECOND_AGGREGATES: "true"
   SERVER__ADDRESS: 0.0.0.0
   SERVER__PORT: "8888"
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -30,13 +29,13 @@ spec:
     spec:
       containers:
       - name: polygon-data-relay
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/polygon-data-relay:TAG # {"$imagepolicy": "flux-system:polygon-data-relay"}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/polygon-data-relay:a70b4f7f74e681be2edd484b37755a122081a587 # {"$imagepolicy": "flux-system:polygon-data-relay"}
         envFrom:
-          - configMapRef:
-              name: polygon-data-relay-cm
-          - configMapRef:
-              name: kafka-cm
-          - secretRef:
-              name: kafka-secret
-          - secretRef:
-              name: polygon-secret
+        - configMapRef:
+            name: polygon-data-relay-cm
+        - configMapRef:
+            name: kafka-cm
+        - secretRef:
+            name: kafka-secret
+        - secretRef:
+            name: polygon-secret
