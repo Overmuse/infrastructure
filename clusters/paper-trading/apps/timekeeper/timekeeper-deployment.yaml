@@ -12,7 +12,7 @@ spec:
         spec:
           containers:
           - name: timekeeper
-            image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/timekeeper:${IMAGE_TAG}
+            image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/timekeeper:v1.0.0 # {"$imagepolicy": "flux-system:timekeeper"}
             imagePullPolicy: IfNotPresent
             envFrom:
             - secretRef:
