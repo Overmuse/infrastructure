@@ -8,6 +8,6 @@ spec:
   imageRepositoryRef:
     name: polygon-data-relay
   policy:
-    alphabetical:
-      order: asc
+    semver:
+      range: 1.0.x
 
