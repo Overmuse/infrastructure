@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: volatility-harvesting
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/volatility-harvesting:${IMAGE_TAG}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/volatility-harvesting:v1.0.0 # {"$imagepolicy": "flux-system:volatility-harvesting"}
         envFrom:
         - secretRef:
             name: kafka-secret

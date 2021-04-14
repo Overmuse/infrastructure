@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: alpaca-data-relay
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:${IMAGE_TAG}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:0ce51ae4e5a925132b88b2c0577eb1726cc70720 # {"$imagepolicy": "flux-system:alpaca-data-relay"}
         envFrom:
         - configMapRef:
             name: alpaca-cm

@@ -1,0 +1,13 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: order-manager
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: order-manager
+  policy:
+    semver:
+      range: 1.0.x
+
