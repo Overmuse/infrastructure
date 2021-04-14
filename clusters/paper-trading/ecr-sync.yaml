@@ -29,8 +29,6 @@ kind: ServiceAccount
 metadata:
   name: ecr-credentials-sync
   namespace: flux-system
-  annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::799439856592:role/FluxECRSync
 ---
 apiVersion: batch/v1beta1
 kind: CronJob
@@ -56,11 +54,9 @@ spec:
           - image: amazon/aws-cli
             name: get-token
             imagePullPolicy: IfNotPresent
-            # You will need to set the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables if not using
-            # IRSA. It is recommended to store the values in a Secret and load them in the container using envFrom.
-            # envFrom:
-            # - secretRef:
-            #     name: aws-credentials
+            envFrom:
+            - secretRef:
+                name: aws-flux-credentials-secret
             env:
             - name: REGION
               value: us-east-1
