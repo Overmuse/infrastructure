@@ -1,3 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: polygon-data-relay-cm
+data:
+  POLYGON__BASE_URL: wss://socket.polygon.io/stocks
+  POLYGON__GROUP_ID: polygon-data-relay
+  POLYGON__TICKERS: MSFT,AAPL,AMZN,FB,BRK.B,JPM,GOOG,GOOGL,JNJ,PG,V,XOM,T,HD,VZ,MA,BAC,DIS,INTC,CVX,MRK,UNH,KO,CMCSA,CSCO,BA,WFC,PFE,PEP,WMT,MCD,C,MDT,ABT,ADBE,CRM,IBM,COST
+  POLYGON__QUOTES: "true"
+  POLYGON__TRADES: "true"
+  POLYGON__MINUTE_AGGREGATES: "true"
+  POLYGON__SECOND_AGGREGATES: "true"
+  SERVER__ADDRESS: 0.0.0.0
+  SERVER__PORT: "8888"
 ---
 apiVersion: apps/v1
 kind: Deployment
