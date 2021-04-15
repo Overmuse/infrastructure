@@ -32,3 +32,7 @@ resource "aws_ecr_repository" "volatility-harvesting" {
   image_tag_mutability = "IMMUTABLE"
 }
 
+resource "aws_ecr_repository" "test" {
+  name                 = "test"
+  image_tag_mutability = "IMMUTABLE"
+}
