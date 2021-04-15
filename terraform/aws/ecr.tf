@@ -3,6 +3,11 @@ resource "aws_ecr_repository" "alpaca-data-relay" {
   image_tag_mutability = "IMMUTABLE"
 }
 
+resource "aws_ecr_repository" "microprice" {
+  name                 = "microprice"
+  image_tag_mutability = "IMMUTABLE"
+}
+
 resource "aws_ecr_repository" "order-manager" {
   name                 = "order-manager"
   image_tag_mutability = "IMMUTABLE"
