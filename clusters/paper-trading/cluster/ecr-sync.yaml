@@ -38,8 +38,8 @@ metadata:
 spec:
   suspend: false
   schedule: 0 */6 * * *
-  failedJobsHistoryLimit: 0
-  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 0
   jobTemplate:
     spec:
       template:
