@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: polygon-data-relay
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/polygon-data-relay:v1.0.0 # {"$imagepolicy": "flux-system:polygon-data-relay"}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/polygon-data-relay:v1.0.1 # {"$imagepolicy": "flux-system:polygon-data-relay"}
         envFrom:
         - configMapRef:
             name: polygon-data-relay-cm
