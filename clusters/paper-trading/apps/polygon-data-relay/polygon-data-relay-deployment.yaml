@@ -13,6 +13,7 @@ data:
   SERVER__ADDRESS: 0.0.0.0
   SERVER__PORT: "8888"
   SENTRY__ADDRESS: https://9fa7922336a54631afa785f186a58ca3@o515476.ingest.sentry.io/5723300
+  RUST_LOG=polygon_data_relay=debug
 ---
 apiVersion: apps/v1
 kind: Deployment
