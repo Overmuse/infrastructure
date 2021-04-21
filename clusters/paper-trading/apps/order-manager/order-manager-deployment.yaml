@@ -6,7 +6,6 @@ data:
   KAFKA__GROUP_ID: order-manager
   KAFKA__INPUT_TOPICS: overmuse-trades,position-intents
   DATABASE__NAME: ordermanagerdb
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -24,13 +23,13 @@ spec:
     spec:
       containers:
       - name: order-manager
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v1.0.0 # {"$imagepolicy": "flux-system:order-manager"}
-        env: 
-          - name: DATABASE__URL
-            valueFrom:
-              secretKeyRef:
-                name: mongo-secret
-                key: MONGO__URL
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v1.0.1 # {"$imagepolicy": "flux-system:order-manager"}
+        env:
+        - name: DATABASE__URL
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGO__URL
         envFrom:
         - secretRef:
             name: kafka-secret
