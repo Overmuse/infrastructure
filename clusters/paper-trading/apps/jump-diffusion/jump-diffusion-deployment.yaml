@@ -26,7 +26,7 @@ spec:
         spec:
           containers:
           - name: jump-diffusion
-            image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/jump-diffusion:v0.1.1 # {"$imagepolicy": "flux-system:jump-diffusion"}
+            image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/jump-diffusion:v0.1.2 # {"$imagepolicy": "flux-system:jump-diffusion"}
             imagePullPolicy: IfNotPresent
             env:
             - name: POLYGON_TOKEN
