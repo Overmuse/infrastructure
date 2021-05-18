@@ -16,7 +16,7 @@ kind: TZCronJob
 metadata:
   name: jump-diffusion-deployment
 spec:
-  schedule: "08 16 * * 1-5"
+  schedule: "12 16 * * 1-5"
   timezone: "America/New_York"
   successfulJobsHistoryLimit: 0
   failedJobsHistoryLimit: 1
@@ -28,6 +28,12 @@ spec:
           - name: jump-diffusion
             image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/jump-diffusion:v0.1.0 # {"$imagepolicy": "flux-system:jump-diffusion"}
             imagePullPolicy: IfNotPresent
+            env:
+              - name: POLYGON_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    name: polygon-secret
+                    key: POLYGON__KEY_ID
             envFrom:
             - secretRef:
                 name: kafka-secret
@@ -35,8 +41,6 @@ spec:
                 name: jump-diffusion-cm
             - configMapRef:
                 name: kafka-cm
-            - secretRef:
-                name: polygon-secret
             command:
               - /bin/sh
               - -c
