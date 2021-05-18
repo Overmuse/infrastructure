@@ -3,6 +3,11 @@ resource "aws_ecr_repository" "alpaca-data-relay" {
   image_tag_mutability = "IMMUTABLE"
 }
 
+resource "aws_ecr_repository" "jump-diffusion" {
+  name                 = "jump-diffusion"
+  image_tag_mutability = "IMMUTABLE"
+}
+
 resource "aws_ecr_repository" "microprice" {
   name                 = "microprice"
   image_tag_mutability = "IMMUTABLE"
