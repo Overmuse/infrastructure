@@ -12,7 +12,7 @@ kind: TZCronJob
 metadata:
   name: jump-diffusion-deployment
 spec:
-  schedule: "45 15 * * 1-5"
+  schedule: "56 15 * * 1-5"
   timezone: "America/New_York"
   successfulJobsHistoryLimit: 0
   failedJobsHistoryLimit: 1
@@ -35,4 +35,4 @@ spec:
               - /bin/sh
               - -c
               - /usr/local/bin/jump-diffusion
-            restartPolicy: OnFailure
+          restartPolicy: OnFailure
