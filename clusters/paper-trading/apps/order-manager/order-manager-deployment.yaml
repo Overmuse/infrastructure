@@ -6,6 +6,7 @@ data:
   KAFKA__GROUP_ID: order-manager
   KAFKA__INPUT_TOPICS: overmuse-trades,position-intents
   DATABASE__NAME: ordermanagerdb
+  RUST_LOG=debug
 ---
 apiVersion: apps/v1
 kind: Deployment
