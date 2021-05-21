@@ -16,7 +16,7 @@ kind: TZCronJob
 metadata:
   name: jump-diffusion-deployment
 spec:
-  schedule: "20 14 * 1-5"
+  schedule: "25 14 * * 1-5"
   timezone: "America/New_York"
   successfulJobsHistoryLimit: 0
   failedJobsHistoryLimit: 1
