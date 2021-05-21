@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: cronjobber
+  namespace: cronjobber
   labels:
     name: cronjobber
 ---
@@ -36,4 +37,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: cronjobber
-    namespace: default
+    namespace: cronjobber
