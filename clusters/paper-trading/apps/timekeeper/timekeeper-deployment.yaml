@@ -16,7 +16,7 @@ spec:
             imagePullPolicy: IfNotPresent
             envFrom:
             - secretRef:
-                name: alpaca-secret-2
+                name: alpaca-secret-3
             - secretRef:
                 name: kafka-secret
             - configMapRef:

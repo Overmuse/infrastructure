@@ -26,7 +26,7 @@ spec:
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trader:v1.0.0 # {"$imagepolicy": "flux-system:trader"}
         envFrom:
         - secretRef:
-            name: alpaca-secret-2
+            name: alpaca-secret-3
         - secretRef:
             name: kafka-secret
         - configMapRef:

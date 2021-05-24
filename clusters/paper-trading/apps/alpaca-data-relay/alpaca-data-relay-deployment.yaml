@@ -38,4 +38,4 @@ spec:
         - secretRef:
             name: kafka-secret
         - secretRef:
-            name: alpaca-secret-2
+            name: alpaca-secret-3
