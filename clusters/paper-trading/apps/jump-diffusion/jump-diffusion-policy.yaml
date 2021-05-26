@@ -9,5 +9,5 @@ spec:
     name: jump-diffusion
   policy:
     semver:
-      range: 0.2.x
+      range: 0.3.x
 
