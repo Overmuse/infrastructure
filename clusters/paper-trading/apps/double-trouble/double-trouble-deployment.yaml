@@ -33,7 +33,6 @@ spec:
         env:
         - name: APP__RUN_MODE
           value: "download"
-        env:
         - name: APP__OUT_FILE
           value: "/config/data.json"
         envFrom:
