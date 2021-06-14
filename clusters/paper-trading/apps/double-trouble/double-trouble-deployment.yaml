@@ -78,6 +78,11 @@ spec:
           value: "run"
         - name: APP__DATA_FILE
           value: "/config/pairs.csv"
+        - name: POLYGON_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: polygon-secret
+              key: POLYGON__KEY_ID
         envFrom:
         - configMapRef:
             name: double-trouble-cm
