@@ -38,6 +38,10 @@ spec:
         envFrom:
         - configMapRef:
             name: double-trouble-cm
+        - configMapRef:
+            name: kafka-cm
+        - secretRef:
+            name: kafka-secret
         - secretRef:
             name: iex-secret
         - secretRef:
@@ -72,6 +76,10 @@ spec:
         envFrom:
         - configMapRef:
             name: double-trouble-cm
+        - configMapRef:
+            name: kafka-cm
+        - secretRef:
+            name: kafka-secret
         volumeMounts:
         - name: config
           mountPath: /config
