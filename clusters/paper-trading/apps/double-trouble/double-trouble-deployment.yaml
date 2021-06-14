@@ -67,6 +67,8 @@ spec:
         - name: config
           mountPath: /config
         command:
+        - /bin/sh
+        - -c
         - julia --project -e 'using DoubleTrouble; main()'
       containers:
       - name: double-trouble
