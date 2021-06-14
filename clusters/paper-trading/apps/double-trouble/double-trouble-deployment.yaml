@@ -28,7 +28,7 @@ spec:
         app: double-trouble
     spec:
       initContainers:
-      - name: download_data
+      - name: download-data
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.1.0 # {"$imagepolicy": "flux-system:double-trouble"}
         env:
         - name: APP__RUN_MODE
@@ -52,7 +52,7 @@ spec:
         - /bin/sh
         - -c
         - /usr/local/bin/double-trouble
-      - name: process_data
+      - name: process-data
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble-jl:v0.1.0 # {"$imagepolicy": "flux-system:double-trouble-jl"}
         env:
         - name: IN_FILE
