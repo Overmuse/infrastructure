@@ -1,0 +1,84 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: double-trouble-cm
+data:
+  KAFKA__ACKS: "1"
+  KAFKA__RETRIES: "3"
+  KAFKA__INPUT_TOPICS: second-aggregates
+  KAFKA__GROUP_ID: double-trouble
+  APP__CASH: "1000000"
+  APP__TICKERS: APA,APC,BKR,BP,CLR,CNQ,COG,COP,CVE,CVX,DVN,E,ENB,EOG,EPD,EQNR,EQT,ET,HES,KMI,MPC,MPLX,MRO,OXY,PAA,PBR,PSX,PTR,PXD,RDS-A,SLB,STO,SU,TOT,TRP,VLO,WMB,XOM
+  RUST_LOG: double_trouble=debug
+  POLYGON_BASE_URL: https://api.polygon.io
+  IEX_BASE_URL: https://cloud.iexapis.com
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: double-trouble-deployment
+spec:
+  selector:
+    matchLabels:
+      app: double-trouble
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: double-trouble
+    spec:
+      initContainers:
+      - name: download_data
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.1.0 # {"$imagepolicy": "flux-system:double-trouble"}
+        env:
+        - name: APP__RUN_MODE
+          value: "download"
+        env:
+        - name: APP__OUT_FILE
+          value: "/config/data.json"
+        envFrom:
+        - configMapRef:
+            name: double-trouble-cm
+        - configMapRef:
+            name: polygon-cm
+        - secretRef:
+            name: iex-secret
+        - secretRef:
+            name: polygon-secret
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        command: 
+        - /bin/sh
+        - -c
+        - /usr/local/bin/double-trouble
+      - name: process_data
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/DoubleTrouble:v0.1.0 # {"$imagepolicy": "flux-system:DoubleTrouble"}
+        env:
+        - name: IN_FILE
+          value: "/config/data.json"
+        - name: OUT_FILE
+          value: "/config/pairs.csv"
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        command:
+        - julia --project -e 'using DoubleTrouble; main()'
+      containers:
+      - name: double-trouble
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.1.0 # {"$imagepolicy": "flux-system:double-trouble"}
+        env:
+        - name: APP__RUN_MODE
+          value: "run"
+        - name: APP__DATA_FILE
+          value: "/config/pairs.csv"
+        envFrom:
+          - configMapRef:
+            name: double-trouble-cm
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        command: 
+        - /bin/sh
+        - -c
+        - /usr/local/bin/double-trouble

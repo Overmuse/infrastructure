@@ -1,0 +1,25 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: double-trouble
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: double-trouble
+  policy:
+    semver:
+      range: 0.1.x
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: DoubleTrouble
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: DoubleTrouble
+  policy:
+    semver:
+      range: 0.1.x
+
