@@ -73,8 +73,8 @@ spec:
         - name: APP__DATA_FILE
           value: "/config/pairs.csv"
         envFrom:
-          - configMapRef:
-            name: double-trouble-cm
+        - configMapRef:
+          name: double-trouble-cm
         volumeMounts:
         - name: config
           mountPath: /config
