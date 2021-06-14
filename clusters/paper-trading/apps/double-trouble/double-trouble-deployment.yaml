@@ -52,12 +52,12 @@ spec:
         volumeMounts:
         - name: config
           mountPath: /config
-        command: 
+        command:
         - /bin/sh
         - -c
         - /usr/local/bin/double-trouble
       - name: process-data
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble-jl:v0.1.0 # {"$imagepolicy": "flux-system:double-trouble-jl"}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble-jl:v0.1.1 # {"$imagepolicy": "flux-system:double-trouble-jl"}
         env:
         - name: IN_FILE
           value: "/config/data.json"
@@ -88,7 +88,7 @@ spec:
         volumeMounts:
         - name: config
           mountPath: /config
-        command: 
+        command:
         - /bin/sh
         - -c
         - /usr/local/bin/double-trouble
