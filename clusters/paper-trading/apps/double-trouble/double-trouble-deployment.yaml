@@ -82,3 +82,6 @@ spec:
         - /bin/sh
         - -c
         - /usr/local/bin/double-trouble
+      volumes:
+      - name: config
+        emptyDir: {}
