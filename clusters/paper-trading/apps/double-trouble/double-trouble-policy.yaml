@@ -14,11 +14,11 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImagePolicy
 metadata:
-  name: DoubleTrouble
+  name: double-trouble-jl
   namespace: flux-system
 spec:
   imageRepositoryRef:
-    name: DoubleTrouble
+    name: double-trouble-jl
   policy:
     semver:
       range: 0.1.x

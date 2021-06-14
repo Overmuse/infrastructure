@@ -13,10 +13,10 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImageRepository
 metadata:
-  name: DoubleTrouble
+  name: double-trouble-jl
   namespace: flux-system
 spec:
-  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/DoubleTrouble
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble-jl
   interval: 1m0s
   secretRef:
     name: ecr-credentials

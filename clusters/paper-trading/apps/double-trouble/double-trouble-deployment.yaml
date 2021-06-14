@@ -53,7 +53,7 @@ spec:
         - -c
         - /usr/local/bin/double-trouble
       - name: process_data
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/DoubleTrouble:v0.1.0 # {"$imagepolicy": "flux-system:DoubleTrouble"}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble-jl:v0.1.0 # {"$imagepolicy": "flux-system:double-trouble-jl"}
         env:
         - name: IN_FILE
           value: "/config/data.json"
