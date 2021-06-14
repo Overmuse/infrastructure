@@ -45,7 +45,7 @@ resource "aws_eks_node_group" "paper-trading" {
   subnet_ids      = aws_subnet.paper-trading[*].id
 
   scaling_config {
-    desired_size = 2
+    desired_size = 3
     max_size     = 3
     min_size     = 1
   }
