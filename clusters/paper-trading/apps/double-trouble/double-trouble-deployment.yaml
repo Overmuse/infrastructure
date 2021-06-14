@@ -39,8 +39,6 @@ spec:
         envFrom:
         - configMapRef:
             name: double-trouble-cm
-        - configMapRef:
-            name: polygon-cm
         - secretRef:
             name: iex-secret
         - secretRef:
