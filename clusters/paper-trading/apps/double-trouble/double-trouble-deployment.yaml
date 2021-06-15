@@ -9,7 +9,7 @@ data:
   KAFKA__GROUP_ID: double-trouble
   APP__CASH: "1000000"
   APP__TICKERS: APA,APC,BKR,BP,CLR,CNQ,COG,COP,CVE,CVX,DVN,E,ENB,EOG,EPD,EQNR,EQT,ET,HES,KMI,MPC,MPLX,MRO,OXY,PAA,PBR,PSX,PTR,PXD,RDS-A,SLB,STO,SU,TOT,TRP,VLO,WMB,XOM
-  RUST_LOG: double_trouble=debug
+  RUST_LOG: double_trouble=trace
   POLYGON_BASE_URL: https://api.polygon.io
   IEX_BASE_URL: https://cloud.iexapis.com
 ---
@@ -18,7 +18,7 @@ kind: TZCronJob
 metadata:
   name: double-trouble-deployment
 spec:
-  schedule: "56 11 * * 1-5"
+  schedule: "04 12 * * 1-5"
   timezone: "America/New_York"
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
