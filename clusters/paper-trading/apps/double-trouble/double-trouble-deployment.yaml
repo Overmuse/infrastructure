@@ -18,7 +18,7 @@ kind: TZCronJob
 metadata:
   name: double-trouble-deployment
 spec:
-  schedule: "47 11 * * 1-5"
+  schedule: "49 11 * * 1-5"
   timezone: "America/New_York"
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
@@ -27,6 +27,7 @@ spec:
       labels:
         app: double-trouble
     spec:
+      restartPolicy: OnFailure
       initContainers:
       - name: download-data
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.2.0 # {"$imagepolicy": "flux-system:double-trouble"}
@@ -97,7 +98,6 @@ spec:
         - /bin/sh
         - -c
         - /usr/local/bin/double-trouble
-      restartPolicy: OnFailure
       volumes:
       - name: config
         emptyDir: {}
