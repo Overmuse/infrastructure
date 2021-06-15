@@ -18,7 +18,7 @@ kind: TZCronJob
 metadata:
   name: double-trouble-deployment
 spec:
-  schedule: "04 12 * * 1-5"
+  schedule: "09 12 * * 1-5"
   timezone: "America/New_York"
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
