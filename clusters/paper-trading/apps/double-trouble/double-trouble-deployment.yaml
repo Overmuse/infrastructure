@@ -13,16 +13,16 @@ data:
   POLYGON_BASE_URL: https://api.polygon.io
   IEX_BASE_URL: https://cloud.iexapis.com
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: cronjobber.hidde.co/v1alpha1
+kind: TZCronJob
 metadata:
   name: double-trouble-deployment
 spec:
-  selector:
-    matchLabels:
-      app: double-trouble
-  replicas: 1
-  template:
+  schedule: "30 9 * * 1-5"
+  timezone: "America/New_York"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
     metadata:
       labels:
         app: double-trouble
