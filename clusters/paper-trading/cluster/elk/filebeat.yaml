@@ -81,12 +81,12 @@ metadata:
   labels:
     k8s-app: filebeat
 spec:
+  selector:
+    matchLables:
+      k8s-app: filebeat
   template:
     metadata:
       labels:
-        k8s-app: filebeat
-    selector:
-      matchLables:
         k8s-app: filebeat
     spec:
       serviceAccountName: filebeat
