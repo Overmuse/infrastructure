@@ -97,6 +97,7 @@ spec:
         - /bin/sh
         - -c
         - /usr/local/bin/double-trouble
+      restartPolicy: OnFailure
       volumes:
       - name: config
         emptyDir: {}
