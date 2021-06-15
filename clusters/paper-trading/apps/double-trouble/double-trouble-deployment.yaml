@@ -16,7 +16,7 @@ data:
 apiVersion: cronjobber.hidde.co/v1alpha1
 kind: TZCronJob
 metadata:
-  name: jump-diffusion-deployment
+  name: double-trouble-deployment
 spec:
   schedule: "30 9 * * 1-5"
   timezone: "America/New_York"
