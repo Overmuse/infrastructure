@@ -14,15 +14,12 @@ data:
       }
     }
     filter {
-      grok {
-          match => { "message" => "%{COMBINEDAPACHELOG}" }
+      json {
+          source => "message"
       }
       date {
         match => [ "timestamp" , "dd/MMM/yyyy:HH:mm:ss Z" ]
       }
-      geoip {
-          source => "clientip"
-        }
       }
       output {
         elasticsearch {
