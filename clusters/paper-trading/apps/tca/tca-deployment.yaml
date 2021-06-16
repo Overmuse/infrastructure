@@ -5,6 +5,7 @@ metadata:
 data:
   KAFKA__GROUP_ID: tca
   KAFKA__INPUT_TOPICS: overmuse-trades,quotes
+  RUST_LOG: tca=debug
 ---
 apiVersion: apps/v1
 kind: Deployment

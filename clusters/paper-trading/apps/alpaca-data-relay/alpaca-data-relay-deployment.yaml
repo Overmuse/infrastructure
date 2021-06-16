@@ -9,7 +9,7 @@ data:
   ALPACA__ACCOUNT_UPDATES: "true"
   ALPACA__TRADE_UPDATES: "true"
   SENTRY__ADDRESS: https://200a764c48b1425595284ae6cb226303@o515476.ingest.sentry.io/5723647
-  RUST_LOG: debug
+  RUST_LOG: alpaca_data_relay=debug
 ---
 apiVersion: apps/v1
 kind: Deployment

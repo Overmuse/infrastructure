@@ -5,6 +5,7 @@ metadata:
 data:
   KAFKA__GROUP_ID: trader
   KAFKA__INPUT_TOPICS: order-intents
+  RUST_LOG: trader=debug
 ---
 apiVersion: apps/v1
 kind: Deployment
