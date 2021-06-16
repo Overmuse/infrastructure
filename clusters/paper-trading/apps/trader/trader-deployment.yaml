@@ -24,6 +24,13 @@ spec:
       containers:
       - name: trader
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trader:v1.0.0 # {"$imagepolicy": "flux-system:trader"}
+        resources:
+          requests:
+            memory: "10Mi"
+            cpu: "10m"
+          limits:
+            memory: "20Mi"
+            cpu: "20m"
         envFrom:
         - secretRef:
             name: alpaca-secret-3

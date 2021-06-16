@@ -27,6 +27,13 @@ spec:
       containers:
       - name: order-manager
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v3.1.0 # {"$imagepolicy": "flux-system:order-manager"}
+        resources:
+          requests:
+            memory: "10Mi"
+            cpu: "10m"
+          limits:
+            memory: "20Mi"
+            cpu: "20m"
         env:
         - name: DATABASE__URL
           valueFrom:

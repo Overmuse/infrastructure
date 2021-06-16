@@ -24,6 +24,13 @@ spec:
       containers:
       - name: tca
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/tca:v1.0.1 # {"$imagepolicy": "flux-system:tca"}
+        resources:
+          requests:
+            memory: "10Mi"
+            cpu: "10m"
+          limits:
+            memory: "20Mi"
+            cpu: "20m"
         envFrom:
         - secretRef:
             name: kafka-secret
