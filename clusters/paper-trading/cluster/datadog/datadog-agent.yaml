@@ -425,6 +425,7 @@ kind: DaemonSet
 metadata:
   name: datadog-agent
   labels: {}
+  namespace: datadog
 spec:
   selector:
     matchLabels:
