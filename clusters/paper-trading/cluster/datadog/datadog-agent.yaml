@@ -410,6 +410,7 @@ kind: Service
 metadata:
   name: datadog-agent-cluster-agent
   labels: {}
+  namespace: datadog
 spec:
   type: ClusterIP
   selector:
