@@ -28,13 +28,6 @@ spec:
       containers:
       - name: alpaca-data-relay
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:v1.1.2 # {"$imagepolicy": "flux-system:alpaca-data-relay"}
-        resources:
-          requests:
-            memory: "10Mi"
-            cpu: "10m"
-          limits:
-            memory: "20Mi"
-            cpu: "20m"
         envFrom:
         - configMapRef:
             name: alpaca-cm
