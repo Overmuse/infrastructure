@@ -8,6 +8,7 @@ metadata:
     heritage: "Helm"
     release: "datadog-agent"
   name: datadog-agent-cluster-agent
+  namespace: datadog
 ---
 # Source: datadog/templates/install_info-configmap.yaml
 apiVersion: v1
@@ -15,6 +16,7 @@ kind: ConfigMap
 metadata:
   name: datadog-agent-installinfo
   labels: {}
+  namespace: datadog
   annotations:
     checksum/install_info: 22b8b7e0a7d3253452aedb7615f5e649c4c08a662ad1ffe80ac5eff42d2d7bde
 data:
