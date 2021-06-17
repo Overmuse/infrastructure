@@ -935,6 +935,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: datadog-agent-cluster-agent
+  namespace: datadog
   labels: {}
 spec:
   replicas: 1
