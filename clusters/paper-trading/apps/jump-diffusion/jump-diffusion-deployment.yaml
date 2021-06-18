@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: jump-diffusion-cm
+  name: jump-diffusion
 data:
   KAFKA__ACKS: "1"
   KAFKA__RETRIES: "3"
@@ -14,7 +14,7 @@ data:
 apiVersion: cronjobber.hidde.co/v1alpha1
 kind: TZCronJob
 metadata:
-  name: jump-diffusion-deployment
+  name: jump-diffusion
 spec:
   schedule: "30 9 * * 1-5"
   timezone: "America/New_York"
@@ -32,15 +32,15 @@ spec:
             - name: POLYGON_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: polygon-secret
+                  name: polygon
                   key: POLYGON__KEY_ID
             envFrom:
             - secretRef:
-                name: kafka-secret
+                name: kafka
             - configMapRef:
-                name: jump-diffusion-cm
+                name: jump-diffusion
             - configMapRef:
-                name: kafka-cm
+                name: kafka
             command:
             - /bin/sh
             - -c

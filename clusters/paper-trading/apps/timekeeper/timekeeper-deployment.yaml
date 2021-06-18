@@ -16,13 +16,13 @@ spec:
             imagePullPolicy: IfNotPresent
             envFrom:
             - secretRef:
-                name: alpaca-secret-3
+                name: alpaca
             - secretRef:
-                name: kafka-secret
+                name: kafka
             - configMapRef:
-                name: kafka-cm
+                name: kafka
             - configMapRef:
-                name: alpaca-cm
+                name: alpaca
             command:
             - /bin/sh
             - -c

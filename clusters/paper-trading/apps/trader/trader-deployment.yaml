@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: trader-cm
+  name: trader
 data:
   KAFKA__GROUP_ID: trader
   KAFKA__INPUT_TOPICS: order-intents
@@ -10,7 +10,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: trader-deployment
+  name: trader
 spec:
   selector:
     matchLabels:
@@ -26,12 +26,12 @@ spec:
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trader:v1.0.3 # {"$imagepolicy": "flux-system:trader"}
         envFrom:
         - secretRef:
-            name: alpaca-secret-3
+            name: alpaca
         - secretRef:
-            name: kafka-secret
+            name: kafka
         - configMapRef:
-            name: trader-cm
+            name: trader
         - configMapRef:
-            name: alpaca-cm
+            name: alpaca
         - configMapRef:
-            name: kafka-cm
+            name: kafka

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: polygon-data-relay-cm
+  name: polygon-data-relay
 data:
   POLYGON__BASE_URL: wss://socket.polygon.io/stocks
   POLYGON__GROUP_ID: polygon-data-relay
@@ -20,7 +20,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: polygon-data-relay-deployment
+  name: polygon-data-relay
 spec:
   selector:
     matchLabels:
@@ -36,10 +36,10 @@ spec:
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/polygon-data-relay:v1.3.0 # {"$imagepolicy": "flux-system:polygon-data-relay"}
         envFrom:
         - configMapRef:
-            name: polygon-data-relay-cm
+            name: polygon-data-relay
         - configMapRef:
-            name: kafka-cm
+            name: kafka
         - secretRef:
-            name: kafka-secret
+            name: kafka
         - secretRef:
-            name: polygon-secret
+            name: polygon

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: order-manager-cm
+  name: order-manager
 data:
   KAFKA__GROUP_ID: order-manager
   KAFKA__INPUT_TOPICS: overmuse-trades,position-intents
@@ -13,7 +13,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: order-manager-deployment
+  name: order-manager
 spec:
   selector:
     matchLabels:
@@ -31,12 +31,12 @@ spec:
         - name: DATABASE__URL
           valueFrom:
             secretKeyRef:
-              name: mongo-secret
+              name: mongo
               key: MONGO__URL
         envFrom:
         - secretRef:
-            name: kafka-secret
+            name: kafka
         - configMapRef:
-            name: order-manager-cm
+            name: order-manager
         - configMapRef:
-            name: kafka-cm
+            name: kafka
