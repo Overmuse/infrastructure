@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kafka-cm
+  name: kafka
 data:
   KAFKA__BOOTSTRAP_SERVERS: pkc-4nym6.us-east-1.aws.confluent.cloud:9092
   KAFKA__SECURITY_PROTOCOL: SASL_SSL

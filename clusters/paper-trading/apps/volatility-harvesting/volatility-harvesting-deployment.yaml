@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: volatility-harvesting-cm
+  name: volatility-harvesting
 data:
   KAFKA__GROUP_ID: volatility-harvesting
   KAFKA__INPUT_TOPICS: trades,time
@@ -13,7 +13,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: volatility-harvesting-deployment
+  name: volatility-harvesting
 spec:
   selector:
     matchLabels:
@@ -29,8 +29,8 @@ spec:
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/volatility-harvesting:v1.1.0 # {"$imagepolicy": "flux-system:volatility-harvesting"}
         envFrom:
         - secretRef:
-            name: kafka-secret
+            name: kafka
         - configMapRef:
-            name: volatility-harvesting-cm
+            name: volatility-harvesting
         - configMapRef:
-            name: kafka-cm
+            name: kafka

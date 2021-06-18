@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: microprice-cm
+  name: microprice
 data:
   KAFKA__GROUP_ID: microprice
   KAFKA__INPUT_TOPICS: quotes
@@ -10,7 +10,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: microprice-deployment
+  name: microprice
 spec:
   selector:
     matchLabels:
@@ -26,8 +26,8 @@ spec:
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/microprice:v1.0.0 # {"$imagepolicy": "flux-system:microprice"}
         envFrom:
         - secretRef:
-            name: kafka-secret
+            name: kafka
         - configMapRef:
-            name: microprice-cm
+            name: microprice
         - configMapRef:
-            name: kafka-cm
+            name: kafka
