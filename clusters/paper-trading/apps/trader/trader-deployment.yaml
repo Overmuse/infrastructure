@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: trader
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trader:v1.0.0 # {"$imagepolicy": "flux-system:trader"}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trader:v1.0.2 # {"$imagepolicy": "flux-system:trader"}
         envFrom:
         - secretRef:
             name: alpaca-secret-3
