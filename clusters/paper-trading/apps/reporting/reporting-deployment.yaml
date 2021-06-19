@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: reporting
 data:
-  APP__TARGET_ADDRESS: https://datadog-agent:8125
+  APP__TARGET_ADDRESS: 0.0.0.0:8125
   KAFKA__GROUP_ID: reporting
   KAFKA__INPUT_TOPICS: overmuse-trades
   RUST_LOG: reporting=debug
