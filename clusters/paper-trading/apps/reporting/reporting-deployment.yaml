@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: reporting
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/reporting:v0.1.2 # {"$imagepolicy": "flux-system:reporting"}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/reporting:v0.1.3 # {"$imagepolicy": "flux-system:reporting"}
         envFrom:
         - secretRef:
             name: kafka
