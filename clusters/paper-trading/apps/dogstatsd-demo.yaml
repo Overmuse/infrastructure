@@ -32,9 +32,6 @@ spec:
     spec:
       serviceAccountName: default
       volumes:
-        - hostPath:
-            path: /var/run/datadog/
-          name: dsdsocket
         - name: custom-metrics-script
           configMap:
             name: custom-metrics-script
@@ -44,9 +41,6 @@ spec:
           image: alpine:3.13
           imagePullPolicy: Always
           volumeMounts:
-            - name: dsdsocket
-              mountPath: /var/run/datadog
-              readOnly: true
             - name: custom-metrics-script
               mountPath: /script/custom-metrics.sh
               subPath: custom-metrics.sh
