@@ -5,6 +5,7 @@ metadata:
 data:
   KAFKA__GROUP_ID: tca
   KAFKA__INPUT_TOPICS: overmuse-trades,quotes
+  SENTRY__ADDRESS: https://846d8482efb34ca9a04fc5fe52fe1b8f@o515476.ingest.sentry.io/5826935
   RUST_LOG: tca=debug
 ---
 apiVersion: apps/v1
