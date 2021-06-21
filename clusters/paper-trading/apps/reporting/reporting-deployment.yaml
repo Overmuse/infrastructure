@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   name: reporting
 data:
-  APP__TARGET_ADDRESS: 0.0.0.0:8125
   KAFKA__GROUP_ID: reporting
   KAFKA__INPUT_TOPICS: overmuse-trades
   RUST_LOG: reporting=debug
@@ -25,6 +24,11 @@ spec:
       containers:
       - name: reporting
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/reporting:v0.1.3 # {"$imagepolicy": "flux-system:reporting"}
+        env:
+          - name: APP__TARGET_ADRESS
+            valueFrom:
+              fieldRef:
+                fieldPath: status.hostIP
         envFrom:
         - secretRef:
             name: kafka
