@@ -6,7 +6,6 @@ metadata:
   namespace: cronjobber
 spec:
   group: cronjobber.hidde.co
-  version: v1alpha1
   names:
     plural: tzcronjobs
     singular: tzcronjob
@@ -15,21 +14,23 @@ spec:
     shortNames:
       - tzc
   scope: Namespaced
-  subresources:
-    status: {}
-  additionalPrinterColumns:
-    - name: Schedule
-      type: string
-      description: The schedule defining the interval a TZCronJob is run
-      JSONPath: .spec.schedule
-    - name: Time zone
-      type: string
-      description: The time zone the interval of a TZCronJob is calculated in
-      JSONPath: .spec.timezone
-    - name: Last schedule
-      type: date
-      description: The last time a Job was scheduled by a TZCronJob
-      JSONPath: .status.lastScheduleTime
-    - name: Age
-      type: date
-      JSONPath: .metadata.creationTimestamp
+  versions:
+    - name: v1alpha1
+      subresources:
+        status: {}
+      additionalPrinterColumns:
+        - name: Schedule
+          type: string
+          description: The schedule defining the interval a TZCronJob is run
+          JSONPath: .spec.schedule
+        - name: Time zone
+          type: string
+          description: The time zone the interval of a TZCronJob is calculated in
+          JSONPath: .spec.timezone
+        - name: Last schedule
+          type: date
+          description: The last time a Job was scheduled by a TZCronJob
+          JSONPath: .status.lastScheduleTime
+        - name: Age
+          type: date
+          JSONPath: .metadata.creationTimestamp
