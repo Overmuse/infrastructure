@@ -9,7 +9,6 @@ data:
     apk add netcat-openbsd
     while true
     do
-      echo -n "james.custom_metric.dogstatsd_unix:1|c" | nc -U -u -w1 /var/run/datadog/dsd.socket
       echo -n "james.custom_metric.dogstatsd_udp:1|c" | nc -u -w1 $DD_AGENT_HOST 8125
       sleep 10
     done
