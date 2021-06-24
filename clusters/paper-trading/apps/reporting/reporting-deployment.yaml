@@ -15,7 +15,7 @@ spec:
   selector:
     matchLabels:
       app: reporting
-  replicas: 0
+  replicas: 1
   template:
     metadata:
       labels:
