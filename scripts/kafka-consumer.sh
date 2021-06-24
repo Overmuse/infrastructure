@@ -1,0 +1,1 @@
+kubectl run -n kafka-paper-trading kafka-consumer -ti --image=strimzi/kafka:latest-kafka-2.4.0 --rm=true --restart=Never -- bin/kafka-console-consumer.sh --bootstrap-server paper-trading-kafka-bootstrap:9092 --topic $1 --from-beginning

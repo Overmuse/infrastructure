@@ -1,0 +1,1 @@
+kubectl run -n kafka-paper-trading kafka-producer -ti --image=strimzi/kafka:latest-kafka-2.4.0 --rm=true --restart=Never -- bin/kafka-console-producer.sh --broker-list paper-trading-kafka-bootstrap:9092 --topic $1
