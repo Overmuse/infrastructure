@@ -6,5 +6,5 @@ metadata:
   labels:
     strimzi.io/cluster: "paper-trading"
 spec:
-  partitions: 1
+  partitions: 3
   replicas: 1
