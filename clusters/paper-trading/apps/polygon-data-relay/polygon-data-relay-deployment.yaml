@@ -25,7 +25,7 @@ spec:
   selector:
     matchLabels:
       app: polygon-data-relay
-  replicas: 1
+  replicas: 0
   template:
     metadata:
       labels:

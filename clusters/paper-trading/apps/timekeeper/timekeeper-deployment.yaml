@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: timekeeper
 spec:
-  schedule: "*/1 * * * 1-5"
+  schedule: "*/1 15 * * 1-5"
   successfulJobsHistoryLimit: 0
   failedJobsHistoryLimit: 1
   jobTemplate:

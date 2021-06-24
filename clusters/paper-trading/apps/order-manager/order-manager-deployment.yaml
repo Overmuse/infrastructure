@@ -18,7 +18,7 @@ spec:
   selector:
     matchLabels:
       app: order-manager
-  replicas: 1
+  replicas: 0
   template:
     metadata:
       labels:
@@ -90,7 +90,7 @@ spec:
   selector:
     matchLabels:
       app: postgres
-  replicas: 1
+  replicas: 0
   template:
     metadata:
       labels:
