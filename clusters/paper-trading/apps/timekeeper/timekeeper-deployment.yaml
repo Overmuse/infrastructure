@@ -1,3 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: timekeeper
+data:
+  KAFKA__BOOTSTRAP_SERVERS: paper-trading-kafka-bootstrap.kafka-paper-trading
+  KAFKA__SECURITY_PROTOCOL: PLAIN
+---
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
@@ -17,10 +25,8 @@ spec:
             envFrom:
             - secretRef:
                 name: alpaca
-            - secretRef:
-                name: kafka
             - configMapRef:
-                name: kafka
+                name: timekeeper
             - configMapRef:
                 name: alpaca
             command:
