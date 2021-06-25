@@ -4,7 +4,7 @@ metadata:
   name: timekeeper
 data:
   KAFKA__BOOTSTRAP_SERVERS: paper-trading-kafka-bootstrap.kafka-paper-trading
-  KAFKA__SECURITY_PROTOCOL: PLAIN
+  KAFKA__SECURITY_PROTOCOL: PLAINTEXT
 ---
 apiVersion: batch/v1beta1
 kind: CronJob
