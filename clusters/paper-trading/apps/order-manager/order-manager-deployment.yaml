@@ -81,7 +81,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgres
+  name: order-manager-db
 spec:
   selector:
     matchLabels:
@@ -112,7 +112,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgres
+  name: order-manager-db
   labels:
     app: order-manager-db
 spec:
