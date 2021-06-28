@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: order-manager
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v5.0.0 # {"$imagepolicy": "flux-system:order-manager"}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v5.0.2 # {"$imagepolicy": "flux-system:order-manager"}
         env:
         envFrom:
         - secretRef:
@@ -93,21 +93,21 @@ spec:
         app: order-manager-db
     spec:
       containers:
-        - name: postgres
-          image: postgres:10.4
-          imagePullPolicy: "IfNotPresent"
-          ports:
-            - containerPort: 5432
-          envFrom:
-            - configMapRef:
-                name: postgres-config
-          volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgredb
+      - name: postgres
+        image: postgres:10.4
+        imagePullPolicy: "IfNotPresent"
+        ports:
+        - containerPort: 5432
+        envFrom:
+        - configMapRef:
+            name: postgres-config
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgredb
       volumes:
-        - name: postgredb
-          persistentVolumeClaim:
-            claimName: postgres-pv-claim
+      - name: postgredb
+        persistentVolumeClaim:
+          claimName: postgres-pv-claim
 ---
 apiVersion: v1
 kind: Service
