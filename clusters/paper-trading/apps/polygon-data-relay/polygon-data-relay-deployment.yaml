@@ -10,8 +10,6 @@ data:
   POLYGON__TRADES: "true"
   POLYGON__MINUTE_AGGREGATES: "true"
   POLYGON__SECOND_AGGREGATES: "true"
-  KAFKA__BOOTSTRAP_SERVERS: paper-trading-kafka-bootstrap.kafka-paper-trading
-  KAFKA__SECURITY_PROTOCOL: PLAINTEXT
   KAFKA__ACKS: "0"
   KAFKA__RETRIES: "0"
   SERVER__ADDRESS: 0.0.0.0
@@ -39,5 +37,9 @@ spec:
         envFrom:
         - configMapRef:
             name: polygon-data-relay
+        - configMapRef:
+            name: kafka
+        - secretRef:
+            name: kafka
         - secretRef:
             name: polygon
