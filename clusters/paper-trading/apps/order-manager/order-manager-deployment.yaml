@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: order-manager
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v4.0.1 # {"$imagepolicy": "flux-system:order-manager"}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v5.0.0 # {"$imagepolicy": "flux-system:order-manager"}
         env:
         envFrom:
         - secretRef:
@@ -60,7 +60,7 @@ spec:
   capacity:
     storage: 5Gi
   accessModes:
-    - ReadWriteMany
+  - ReadWriteMany
   hostPath:
     path: "/mnt/data"
 ---
@@ -73,7 +73,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteMany
+  - ReadWriteMany
   resources:
     requests:
       storage: 5Gi
@@ -102,6 +102,6 @@ metadata:
 spec:
   type: NodePort
   ports:
-   - port: 5432
+  - port: 5432
   selector:
-   app: order-manager
+    app: order-manager
