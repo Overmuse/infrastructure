@@ -44,9 +44,9 @@ metadata:
   labels:
     app: order-manager-db
 data:
-  POSTGRES_DB: order-manager
-  POSTGRES_USER: postgres
-  POSTGRES_PASSWORD: password
+  POSTGRES_DB: postgresdb # TODO: These values have to be updated
+  POSTGRES_USER: postgresadmin
+  POSTGRES_PASSWORD: admin123
 ---
 kind: PersistentVolume
 apiVersion: v1
