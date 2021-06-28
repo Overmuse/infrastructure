@@ -7,7 +7,7 @@ data:
   KAFKA__INPUT_TOPICS: overmuse-trades,position-intents
   KAFKA__ACKS: "1"
   KAFKA__RETRIES: "3"
-  DATABASE__URL: postgres://postgres:password@postgres:5432
+  DATABASE__URL: postgres://postgres:password@order-manager-db:5432
   DATABASE__NAME: order-manager
   RUST_LOG: order_manager=debug
 ---
