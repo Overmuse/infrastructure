@@ -28,11 +28,6 @@ spec:
       - name: order-manager
         image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v4.0.1 # {"$imagepolicy": "flux-system:order-manager"}
         env:
-        - name: DATABASE__URL
-          valueFrom:
-            secretKeyRef:
-              name: mongo
-              key: MONGO__URL
         envFrom:
         - secretRef:
             name: kafka
