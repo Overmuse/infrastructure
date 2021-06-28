@@ -1,0 +1,4 @@
+#!/bin/bash
+
+POD=$(kubectl get pod -l app=grafana -n monitoring -o jsonpath="{.items[0].metadata.name}")
+kubectl port-forward -n monitoring "$POD" 3000
