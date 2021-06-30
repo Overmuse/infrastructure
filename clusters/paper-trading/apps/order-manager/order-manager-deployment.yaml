@@ -9,7 +9,7 @@ data:
   KAFKA__RETRIES: "3"
   DATABASE__URL: postgres://postgresadmin:admin123@order-manager-db:5432
   DATABASE__NAME: postgresdb
-  WEBSOCKET__PORT: "8000"
+  WEBSERVER__PORT: "8000"
   RUST_LOG: order_manager=trace
 ---
 apiVersion: apps/v1
