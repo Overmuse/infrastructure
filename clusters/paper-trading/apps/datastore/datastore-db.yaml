@@ -65,9 +65,9 @@ spec:
             name: datastore-db
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: datastore
+          name: datastore-db
       volumes:
-      - name: postgredb
+      - name: datastore-db
         persistentVolumeClaim:
           claimName: datastore-pv-claim
 ---
