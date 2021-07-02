@@ -30,8 +30,6 @@ spec:
             fieldRef:
               fieldPath: status.hostIP
         envFrom:
-        - secretRef:
-            name: kafka
         - configMapRef:
             name: reporting
         - configMapRef:

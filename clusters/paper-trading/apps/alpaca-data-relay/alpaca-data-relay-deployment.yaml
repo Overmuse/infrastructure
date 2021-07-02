@@ -3,9 +3,7 @@ kind: ConfigMap
 metadata:
   name: alpaca-data-relay
 data:
-  KAFKA__BOOTSTRAP_SERVERS: pkc-ep9mm.us-east-2.aws.confluent.cloud:9092
   KAFKA__GROUP_ID: alpaca-data-relay
-  KAFKA__SECURITY_PROTOCOL: SASL_SSL
   ALPACA__ACCOUNT_UPDATES: "true"
   ALPACA__TRADE_UPDATES: "true"
   SENTRY__ADDRESS: https://200a764c48b1425595284ae6cb226303@o515476.ingest.sentry.io/5723647
@@ -34,8 +32,6 @@ spec:
         - configMapRef:
             name: alpaca-data-relay
         - configMapRef:
-            name: kafka
-        - secretRef:
             name: kafka
         - secretRef:
             name: alpaca

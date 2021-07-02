@@ -17,8 +17,6 @@ spec:
             envFrom:
             - secretRef:
                 name: alpaca
-            - secretRef:
-                name: kafka
             - configMapRef:
                 name: kafka
             - configMapRef:
