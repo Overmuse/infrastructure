@@ -72,7 +72,7 @@ metadata:
   labels:
     strimzi.io/cluster: "paper-trading"
 spec:
-  partitions: 3
+  partitions: 1
   replicas: 1
 ---
 apiVersion: kafka.strimzi.io/v1beta2
@@ -83,7 +83,7 @@ metadata:
   labels:
     strimzi.io/cluster: "paper-trading"
 spec:
-  partitions: 3
+  partitions: 1
   replicas: 1
 ---
 apiVersion: kafka.strimzi.io/v1beta2
@@ -116,5 +116,5 @@ metadata:
   labels:
     strimzi.io/cluster: "paper-trading"
 spec:
-  partitions: 3
+  partitions: 1
   replicas: 1
