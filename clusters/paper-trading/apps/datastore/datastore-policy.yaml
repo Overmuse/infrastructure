@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   imageRepositoryRef:
-    name: datastore
+    name: datastore-server
   policy:
     semver:
       range: 0.1.x
