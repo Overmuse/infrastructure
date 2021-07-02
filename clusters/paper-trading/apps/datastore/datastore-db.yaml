@@ -29,7 +29,7 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: datstore-pv-claim
+  name: datastore-pv-claim
   labels:
     app: datastore
 spec:
