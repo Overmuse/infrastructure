@@ -6,7 +6,7 @@ data:
   DATABASE__URL: postgres://postgres:password@datastore-db:5432
   DATABASE__NAME: datastore
   WEBSERVER__PORT: "8000"
-  RUST_LOG: datastore=trace
+  RUST_LOG: info
 ---
 apiVersion: apps/v1
 kind: Deployment
