@@ -3,6 +3,11 @@ resource "aws_ecr_repository" "alpaca-data-relay" {
   image_tag_mutability = "IMMUTABLE"
 }
 
+resource "aws_ecr_repository" "datastore-server" {
+  name                 = "datastore-server"
+  image_tag_mutability = "IMMUTABLE"
+}
+
 resource "aws_ecr_repository" "double-trouble" {
   name                 = "double-trouble"
   image_tag_mutability = "IMMUTABLE"
