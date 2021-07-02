@@ -19,7 +19,7 @@ kind: TZCronJob
 metadata:
   name: double-trouble
 spec:
-  schedule: "50 14 * * 1-5"
+  schedule: "24 14 * * 1-5"
   timezone: "America/New_York"
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
@@ -47,6 +47,8 @@ spec:
             - configMapRef:
                 name: double-trouble
             - configMapRef:
+                name: kafka
+            - secretRef:
                 name: kafka
             - secretRef:
                 name: iex
@@ -88,6 +90,8 @@ spec:
             - configMapRef:
                 name: double-trouble
             - configMapRef:
+                name: kafka
+            - secretRef:
                 name: kafka
             volumeMounts:
             - name: config
