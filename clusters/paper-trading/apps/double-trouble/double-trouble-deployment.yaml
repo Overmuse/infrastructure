@@ -49,8 +49,6 @@ spec:
             - configMapRef:
                 name: kafka
             - secretRef:
-                name: kafka
-            - secretRef:
                 name: iex
             volumeMounts:
             - name: config

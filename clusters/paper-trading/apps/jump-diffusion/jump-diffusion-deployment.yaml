@@ -35,8 +35,6 @@ spec:
                       name: polygon
                       key: POLYGON__KEY_ID
               envFrom:
-                - secretRef:
-                    name: kafka
                 - configMapRef:
                     name: jump-diffusion
                 - configMapRef:

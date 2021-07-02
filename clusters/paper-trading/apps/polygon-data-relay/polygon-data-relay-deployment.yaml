@@ -40,6 +40,4 @@ spec:
         - configMapRef:
             name: kafka
         - secretRef:
-            name: kafka
-        - secretRef:
             name: polygon
