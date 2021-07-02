@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: order-manager
+  name: datastore
 data:
   DATABASE__URL: postgres://postgres:password@datastore-db:5432
   DATABASE__NAME: datastore
