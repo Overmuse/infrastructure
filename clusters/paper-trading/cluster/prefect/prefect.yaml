@@ -27,7 +27,7 @@ spec:
         - name: PREFECT__CLOUD__API
           value: https://api.prefect.io
         - name: NAMESPACE
-          value: default
+          value: prefect
         - name: IMAGE_PULL_SECRETS
           value: ''
         - name: PREFECT__CLOUD__AGENT__LABELS
@@ -67,7 +67,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: prefect-agent-rbac
-  namespace: default
+  namespace: prefect
 rules:
 - apiGroups:
   - batch
@@ -88,7 +88,7 @@ apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: RoleBinding
 metadata:
   name: prefect-agent-rbac
-  namespace: default
+  namespace: prefect
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
