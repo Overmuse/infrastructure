@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 8,
-  "iteration": 1624993917640,
+  "iteration": 1625684726602,
   "links": [],
   "panels": [
     {
@@ -187,7 +186,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 19,
+        "h": 20,
         "w": 17,
         "x": 7,
         "y": 8
@@ -219,6 +218,33 @@
       ],
       "title": "Top 3 band-ratios over time",
       "type": "timeseries"
+    },
+    {
+      "datasource": "Loki",
+      "gridPos": {
+        "h": 8,
+        "w": 7,
+        "x": 0,
+        "y": 28
+      },
+      "id": 6,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "showLabels": false,
+        "showTime": true,
+        "sortOrder": "Descending",
+        "wrapLogMessage": true
+      },
+      "targets": [
+        {
+          "expr": "{container=\"double-trouble\"} |= \"Sending intent\" != \"Zero\" | json",
+          "queryType": "randomWalk",
+          "refId": "A"
+        }
+      ],
+      "title": "Position Intents",
+      "type": "logs"
     },
     {
       "datasource": "Loki",
@@ -273,10 +299,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
+        "h": 8,
         "w": 17,
         "x": 7,
-        "y": 27
+        "y": 28
       },
       "id": 14,
       "options": {
@@ -303,36 +329,9 @@
       ],
       "title": "Stock price",
       "type": "timeseries"
-    },
-    {
-      "datasource": "Loki",
-      "gridPos": {
-        "h": 8,
-        "w": 7,
-        "x": 0,
-        "y": 28
-      },
-      "id": 6,
-      "options": {
-        "dedupStrategy": "none",
-        "enableLogDetails": true,
-        "showLabels": false,
-        "showTime": true,
-        "sortOrder": "Descending",
-        "wrapLogMessage": true
-      },
-      "targets": [
-        {
-          "expr": "{container=\"double-trouble\"} |= \"Sending intent\" != \"Zero\" | json",
-          "queryType": "randomWalk",
-          "refId": "A"
-        }
-      ],
-      "title": "Position Intents",
-      "type": "logs"
     }
   ],
-  "refresh": "5m",
+  "refresh": "1m",
   "schemaVersion": 30,
   "style": "dark",
   "tags": [],
@@ -385,7 +384,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
