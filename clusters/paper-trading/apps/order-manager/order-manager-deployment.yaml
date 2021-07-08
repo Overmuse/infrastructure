@@ -45,9 +45,8 @@ metadata:
   labels:
     app: order-manager
 spec:
-  type: ClusterIP
   ports:
     - name: web
-      containerPort: 8000
+      port: 8000
   selector:
     app: order-manager
