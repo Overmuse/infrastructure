@@ -9,6 +9,7 @@ spec:
   namespaceSelector:
     matchNames:
       - flux-system
+      - default
   selector:
     matchExpressions:
       - key: app
