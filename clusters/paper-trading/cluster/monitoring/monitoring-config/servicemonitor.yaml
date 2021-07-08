@@ -11,6 +11,6 @@ spec:
       - default
   selector:
     matchLabels:
-      - app: order-manager
+      app: order-manager
   endpoints:
     - port: web 
