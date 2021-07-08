@@ -28,7 +28,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: order-manager
-  namespace: flux-system
+  namespace: default
   labels:
     app.kubernetes.io/part-of: flux
 spec:
