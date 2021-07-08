@@ -9,4 +9,4 @@ spec:
     matchLabels:
       app: order-manager
   endpoints:
-  - port: 8000
+  - port: "8000"
