@@ -45,7 +45,6 @@ metadata:
   labels:
     app: order-manager
 spec:
-  type: NodePort
   ports:
     - name: web
       port: 8000
