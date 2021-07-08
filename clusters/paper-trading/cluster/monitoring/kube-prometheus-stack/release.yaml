@@ -27,3 +27,4 @@ spec:
         podMonitorSelector:
           matchLabels:
             app.kubernetes.io/part-of: flux
+        logLevel: debug
