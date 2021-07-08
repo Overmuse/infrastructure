@@ -20,5 +20,6 @@ spec:
           - notification-controller
           - image-automation-controller
           - image-reflector-controller
+          - order-manager
   podMetricsEndpoints:
     - port: http-prom
