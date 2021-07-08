@@ -42,4 +42,4 @@ spec:
         values:
           - order-manager
   podMetricsEndpoints:
-    - port: "8000"
+    - port: web 
