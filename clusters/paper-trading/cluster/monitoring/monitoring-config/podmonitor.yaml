@@ -1,3 +1,4 @@
+---
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
@@ -9,7 +10,6 @@ spec:
   namespaceSelector:
     matchNames:
       - flux-system
-      - default
   selector:
     matchExpressions:
       - key: app
@@ -21,6 +21,25 @@ spec:
           - notification-controller
           - image-automation-controller
           - image-reflector-controller
-          - order-manager
   podMetricsEndpoints:
     - port: http-prom
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: order-manager
+  namespace: flux-system
+  labels:
+    app.kubernetes.io/part-of: flux
+spec:
+  namespaceSelector:
+    matchNames:
+      - default
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - order-manager
+  podMetricsEndpoints:
+    - port: "8000"
