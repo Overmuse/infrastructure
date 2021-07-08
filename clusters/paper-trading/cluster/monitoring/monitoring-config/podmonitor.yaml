@@ -42,4 +42,4 @@ spec:
         values:
           - order-manager
   podMetricsEndpoints:
-    - port: web 
+    - port: "31534" 
