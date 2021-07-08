@@ -1,0 +1,12 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: order-manager
+  labels:
+    app: order-manager
+spec:
+  selector:
+    matchLabels:
+      app: order-manager
+  endpoints:
+  - port: 8000
