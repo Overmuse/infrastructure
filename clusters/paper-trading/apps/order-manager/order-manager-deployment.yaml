@@ -48,6 +48,6 @@ spec:
   type: ClusterIP
   ports:
     - name: web
-      port: 8000
+      containerPort: 8000
   selector:
     app: order-manager
