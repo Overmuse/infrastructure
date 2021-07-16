@@ -9,5 +9,5 @@ spec:
     name: order-manager
   policy:
     semver:
-      range: 6.1.x
+      range: 7.0.x
 
