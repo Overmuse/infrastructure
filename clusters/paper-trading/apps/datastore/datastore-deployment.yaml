@@ -39,6 +39,6 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8000
+    - port: 8010
   selector:
     app: datastore
