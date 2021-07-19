@@ -1,7 +1,7 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: order-manager
+  name: reporting
   namespace: default
   labels:
     app.kubernetes.io/part-of: flux
@@ -11,6 +11,6 @@ spec:
       - default
   selector:
     matchLabels:
-      app: order-manager
+      app: reporting
   endpoints:
     - port: web 

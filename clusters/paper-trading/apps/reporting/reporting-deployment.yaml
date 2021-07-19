@@ -5,6 +5,7 @@ metadata:
 data:
   KAFKA__GROUP_ID: reporting
   KAFKA__INPUT_TOPICS: overmuse-trades
+  WEBSERVER__PORT: "8000"
   RUST_LOG: reporting=debug
 ---
 apiVersion: apps/v1
@@ -36,3 +37,16 @@ spec:
             name: reporting
         - configMapRef:
             name: kafka
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reporting
+  labels:
+    app: reporting
+spec:
+  ports:
+    - name: web
+      port: 8000
+  selector:
+    app: reporting

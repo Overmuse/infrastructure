@@ -9,5 +9,5 @@ spec:
     name: reporting
   policy:
     semver:
-      range: 0.1.x
+      range: 0.2.x
 
