@@ -5,7 +5,7 @@ metadata:
 data:
   DATABASE__URL: postgres://postgres:password@datastore-db:5432
   DATABASE__NAME: datastore
-  WEBSERVER__PORT: "8000"
+  WEBSERVER__PORT: "8010"
   RUST_LOG: info
 ---
 apiVersion: apps/v1
