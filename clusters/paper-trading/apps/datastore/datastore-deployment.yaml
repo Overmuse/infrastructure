@@ -25,6 +25,8 @@ spec:
       containers:
         - name: datastore
           image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/datastore-server:v0.1.0 # {"$imagepolicy": "flux-system:datastore"}
+          ports:
+            - containerPort: 8010
           env:
           envFrom:
             - configMapRef:
