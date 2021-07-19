@@ -23,20 +23,20 @@ spec:
         app: reporting
     spec:
       containers:
-      - name: reporting
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/reporting:v0.1.5 # {"$imagepolicy": "flux-system:reporting"}
-        env:
-        - name: APP__TARGET_ADDRESS
-          valueFrom:
-            fieldRef:
-              fieldPath: status.hostIP
-        envFrom:
-        - secretRef:
-            name: kafka
-        - configMapRef:
-            name: reporting
-        - configMapRef:
-            name: kafka
+        - name: reporting
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/reporting:v0.2.0 # {"$imagepolicy": "flux-system:reporting"}
+          env:
+            - name: APP__TARGET_ADDRESS
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+          envFrom:
+            - secretRef:
+                name: kafka
+            - configMapRef:
+                name: reporting
+            - configMapRef:
+                name: kafka
 ---
 apiVersion: v1
 kind: Service
