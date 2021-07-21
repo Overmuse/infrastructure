@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: datastore
+data:
+  DATABASE__URL: postgres://postgres:password@datastore-db:5432
+  DATABASE__NAME: datastore
+  WEBSERVER__PORT: "8010"
+  REDIS__URL: "redis://datastore-redis:6379"
+  KAFKA__GROUP_ID: datastore
+  KAFKA__INPUT_TOPICS: trades
+  RUST_LOG: info
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: datastore
+spec:
+  selector:
+    matchLabels:
+      app: datastore
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: datastore
+    spec:
+      containers:
+        - name: datastore
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/datastore-server:v0.1.0 # {"$imagepolicy": "flux-system:datastore"}
+          ports:
+            - containerPort: 8010
+          env:
+          envFrom:
+            - configMapRef:
+                name: datastore
+            - secretRef:
+                name: kafka
+            - configMapRef:
+                name: kafka
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: datastore
+  labels:
+    app: datastore
+spec:
+  type: NodePort
+  ports:
+    - port: 8010
+  selector:
+    app: datastore
