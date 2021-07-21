@@ -6,6 +6,9 @@ data:
   DATABASE__URL: postgres://postgres:password@datastore-db:5432
   DATABASE__NAME: datastore
   WEBSERVER__PORT: "8010"
+  REDIS__URL: "redis://datastore-redis:6379"
+  KAFKA__GROUP_ID: datastore
+  KAFKA__INPUT_TOPICS: trades
   RUST_LOG: info
 ---
 apiVersion: apps/v1
@@ -31,6 +34,10 @@ spec:
           envFrom:
             - configMapRef:
                 name: datastore
+            - secretRef:
+                name: kafka
+            - configMapRef:
+                name: kafka
 ---
 apiVersion: v1
 kind: Service
