@@ -5,7 +5,7 @@ metadata:
   name: datastore
   namespace: flux-system
 spec:
-  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/datastore
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/datastore-server
   interval: 1m0s
   secretRef:
     name: ecr-credentials
