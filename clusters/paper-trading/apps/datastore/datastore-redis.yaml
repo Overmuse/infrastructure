@@ -22,13 +22,6 @@ spec:
         envFrom:
         - configMapRef:
             name: datastore-db
-        volumeMounts:
-        - mountPath: /var/lib/postgresql/data
-          name: datastore-db
-      volumes:
-      - name: datastore-db
-        persistentVolumeClaim:
-          claimName: datastore-pv-claim
 ---
 apiVersion: v1
 kind: Service
