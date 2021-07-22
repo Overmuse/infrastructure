@@ -340,8 +340,8 @@
       {
         "current": {
           "selected": false,
-          "text": "PTR",
-          "value": "PTR"
+          "text": "",
+          "value": ""
         },
         "description": null,
         "error": null,
@@ -362,8 +362,8 @@
       {
         "current": {
           "selected": false,
-          "text": "OXY",
-          "value": "OXY"
+          "text": "",
+          "value": ""
         },
         "description": null,
         "error": null,

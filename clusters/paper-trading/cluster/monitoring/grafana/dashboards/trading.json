@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 29,
+  "iteration": 1625684726602,
   "links": [],
   "panels": [
     {
@@ -319,6 +319,6 @@
   "timepicker": {},
   "timezone": "",
   "title": "Trading",
-  "uid": "qAPKp0m7k",
-  "version": 2
+  "uid": "trading",
+  "version": 1
 }
