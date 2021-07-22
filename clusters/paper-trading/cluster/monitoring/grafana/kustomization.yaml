@@ -9,6 +9,6 @@ configMapGenerator:
     files:
       - dashboards/control-plane.json
       - dashboards/cluster.json
-      - dashboars/double-trouble.json
+      - dashboards/double-trouble.json
       - dashboards/trading.json
 
