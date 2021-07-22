@@ -351,11 +351,11 @@
         "options": [
           {
             "selected": true,
-            "text": "PTR",
-            "value": "PTR"
+            "text": "",
+            "value": ""
           }
         ],
-        "query": "PTR",
+        "query": "",
         "skipUrlSync": false,
         "type": "textbox"
       },
@@ -373,18 +373,18 @@
         "options": [
           {
             "selected": true,
-            "text": "OXY",
-            "value": "OXY"
+            "text": "",
+            "value": ""
           }
         ],
-        "query": "OXY",
+        "query": "",
         "skipUrlSync": false,
         "type": "textbox"
       }
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
