@@ -9,7 +9,7 @@ data:
   REDIS__URL: redis://datastore-redis:6379
   KAFKA__GROUP_ID: datastore
   KAFKA__INPUT_TOPICS: trades
-  RUST_LOG: trace
+  RUST_LOG: datastore_server=trace
 ---
 apiVersion: apps/v1
 kind: Deployment
