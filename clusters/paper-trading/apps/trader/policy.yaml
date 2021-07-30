@@ -9,5 +9,5 @@ spec:
     name: trader
   policy:
     semver:
-      range: 2.0.x
+      range: 1.1.x
 
