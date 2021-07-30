@@ -4,7 +4,7 @@ metadata:
   name: trader
 data:
   KAFKA__GROUP_ID: trader
-  KAFKA__INPUT_TOPICS: order-intents
+  KAFKA__INPUT_TOPICS: trade-intents
   SENTRY__ADDRESS: https://7c79abf30cf9466ebd8aa6c3ca80b6d8@o515476.ingest.sentry.io/5826932
   RUST_LOG: trader=debug
 ---
