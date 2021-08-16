@@ -1,0 +1,1 @@
+INSERT INTO allocations select 'House' as owner, null as sub_owner, null as claim_id, uuid(lot_id) as lot_id, a.ticker as ticker, (l.shares - a.shares) as shares, (l.shares * l.price - a.basis) as basis, uuid_generate_v4() as id from allocations a inner join lots l on a.lot_id = l.id where owner = 'jump-diffusion';
