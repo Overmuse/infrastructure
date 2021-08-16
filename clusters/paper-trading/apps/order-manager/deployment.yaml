@@ -4,7 +4,7 @@ metadata:
   name: order-manager
 data:
   KAFKA__GROUP_ID: order-manager
-  KAFKA__INPUT_TOPICS: overmuse-trades,position-intents
+  KAFKA__INPUT_TOPICS: overmuse-trades,position-intents,time
   KAFKA__ACKS: "1"
   KAFKA__RETRIES: "3"
   REDIS__URL: redis://datastore-redis:6379
