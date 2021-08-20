@@ -59,7 +59,7 @@ spec:
         image: postgres:10.4
         imagePullPolicy: "IfNotPresent"
         ports:
-        - containerPort: 5432
+        - containerPort: 5433
         envFrom:
         - configMapRef:
             name: postgres-config
@@ -80,6 +80,6 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 5432
+  - port: 5433
   selector:
     app: order-manager-db

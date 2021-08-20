@@ -9,7 +9,7 @@ data:
   KAFKA__ACKS: "1"
   KAFKA__RETRIES: "3"
   REDIS__URL: redis://datastore-redis:6379
-  DATABASE__URL: postgres://postgres:password@order-manager-db:5432
+  DATABASE__URL: postgres://postgres:password@order-manager-db:5433
   DATABASE__NAME: order-manager
   WEBSERVER__PORT: "8000"
   RUST_LOG: order_manager=trace
