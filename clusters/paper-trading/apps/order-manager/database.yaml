@@ -6,9 +6,9 @@ metadata:
   labels:
     app: order-manager-db
 data:
-  POSTGRES_DB: postgresdb # TODO: These values have to be updated
-  POSTGRES_USER: postgresadmin
-  POSTGRES_PASSWORD: admin123
+  POSTGRES_DB: order-manager # TODO: These values have to be updated
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: password
 ---
 kind: PersistentVolume
 apiVersion: v1
@@ -65,9 +65,9 @@ spec:
             name: postgres-config
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: postgredb
+          name: postgresdb
       volumes:
-      - name: postgredb
+      - name: postgresdb
         persistentVolumeClaim:
           claimName: postgres-pv-claim
 ---
