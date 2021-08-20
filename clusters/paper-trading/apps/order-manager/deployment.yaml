@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: order-manager
 data:
+  APP__UNREPORTED_TRADE_EXPIRY_SECONDS: "300"
   KAFKA__GROUP_ID: order-manager
   KAFKA__INPUT_TOPICS: overmuse-trades,position-intents,time
   KAFKA__ACKS: "1"
