@@ -26,16 +26,16 @@ spec:
         app: alpaca-data-relay
     spec:
       containers:
-      - name: alpaca-data-relay
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:v1.1.3 # {"$imagepolicy": "flux-system:alpaca-data-relay"}
-        envFrom:
-        - configMapRef:
-            name: alpaca
-        - configMapRef:
-            name: alpaca-data-relay
-        - configMapRef:
-            name: kafka
-        - secretRef:
-            name: kafka
-        - secretRef:
-            name: alpaca
+        - name: alpaca-data-relay
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:v1.2.0 # {"$imagepolicy": "flux-system:alpaca-data-relay"}
+          envFrom:
+            - configMapRef:
+                name: alpaca
+            - configMapRef:
+                name: alpaca-data-relay
+            - configMapRef:
+                name: kafka
+            - secretRef:
+                name: kafka
+            - secretRef:
+                name: alpaca
