@@ -23,12 +23,12 @@ spec:
         app: tca
     spec:
       containers:
-      - name: tca
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/tca:v1.1.0 # {"$imagepolicy": "flux-system:tca"}
-        envFrom:
-        - secretRef:
-            name: kafka
-        - configMapRef:
-            name: tca
-        - configMapRef:
-            name: kafka
+        - name: tca
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/tca:v1.2.0 # {"$imagepolicy": "flux-system:tca"}
+          envFrom:
+            - secretRef:
+                name: kafka
+            - configMapRef:
+                name: tca
+            - configMapRef:
+                name: kafka
