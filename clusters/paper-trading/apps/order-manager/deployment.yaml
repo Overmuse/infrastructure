@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: order-manager
-          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v10.6.1 # {"$imagepolicy": "flux-system:order-manager"}
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v10.6.2 # {"$imagepolicy": "flux-system:order-manager"}
           env:
           envFrom:
             - secretRef:
