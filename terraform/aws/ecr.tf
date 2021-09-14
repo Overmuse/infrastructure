@@ -43,6 +43,11 @@ resource "aws_ecr_repository" "reporting" {
   image_tag_mutability = "IMMUTABLE"
 }
 
+resource "aws_ecr_repository" "risk-manager" {
+  name                 = "risk-manager"
+  image_tag_mutability = "IMMUTABLE"
+}
+
 resource "aws_ecr_repository" "tca" {
   name                 = "tca"
   image_tag_mutability = "IMMUTABLE"
