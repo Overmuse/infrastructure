@@ -38,13 +38,3 @@ spec:
                 name: kafka
             - configMapRef:
                 name: risk-manager
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: risk-manager
-  labels:
-    app: risk-manager
-spec:
-  selector:
-    app: risk-manager
