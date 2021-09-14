@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: risk-manager
+data:
+  KAFKA__GROUP_ID: risk-manager
+  KAFKA__INPUT_TOPICS: lots,risk-check-request
+  KAFKA__ACKS: "1"
+  KAFKA__RETRIES: "3"
+  RUST_LOG: risk_manager=trace
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: risk-manager
+spec:
+  selector:
+    matchLabels:
+      app: risk-manager
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: risk-manager
+    spec:
+      containers:
+        - name: risk-manager
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/risk-manager:v0.1.0 # {"$imagepolicy": "flux-system:risk-manager"}
+          env:
+          envFrom:
+            - configMapRef:
+                name: alpaca
+            - secretRef:
+                name: alpaca
+            - configMapRef:
+                name: kafka
+            - secretRef:
+                name: kafka
+            - configMapRef:
+                name: risk-manager
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: risk-manager
+  labels:
+    app: risk-manager
+spec:
+  selector:
+    app: risk-manager
