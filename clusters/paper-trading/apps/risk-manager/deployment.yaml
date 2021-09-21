@@ -7,6 +7,7 @@ data:
   KAFKA__INPUT_TOPICS: lots,risk-check-request
   KAFKA__ACKS: "1"
   KAFKA__RETRIES: "3"
+  REDIS__URL: redis://datastore-redis:6379
   RUST_LOG: risk_manager=trace
 ---
 apiVersion: apps/v1
