@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: risk-manager
 data:
+  DATASTORE__BASE_URL: http://datastore:8010
   KAFKA__GROUP_ID: risk-manager
   KAFKA__INPUT_TOPICS: lots,risk-check-request
   KAFKA__ACKS: "1"
