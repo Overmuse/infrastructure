@@ -9,5 +9,5 @@ spec:
     name: risk-manager
   policy:
     semver:
-      range: 0.3.x
+      range: 0.4.x
 
