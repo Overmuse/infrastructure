@@ -4,11 +4,11 @@ metadata:
   name: order-manager
 data:
   APP__UNREPORTED_TRADE_EXPIRY_SECONDS: "300"
+  DATASTORE__BASE_URL: http://datastore:8010
   KAFKA__GROUP_ID: order-manager
   KAFKA__INPUT_TOPICS: overmuse-trades,position-intents,risk-check-response,time
   KAFKA__ACKS: "1"
   KAFKA__RETRIES: "3"
-  REDIS__URL: redis://datastore-redis:6379
   DATABASE__URL: postgres://postgresadmin:admin123@order-manager-db:5432
   DATABASE__NAME: postgresdb
   WEBSERVER__PORT: "8000"
