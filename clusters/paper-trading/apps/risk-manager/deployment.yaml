@@ -5,6 +5,7 @@ metadata:
 data:
   DATASTORE__BASE_URL: http://datastore:8010
   KAFKA__GROUP_ID: risk-manager
+  KAFKA__UNIQUE_ID: "true"
   KAFKA__INPUT_TOPICS: lots,risk-check-request,time
   KAFKA__ACKS: "1"
   KAFKA__RETRIES: "3"
