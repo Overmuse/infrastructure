@@ -19,7 +19,7 @@ kind: TZCronJob
 metadata:
   name: double-trouble
 spec:
-  schedule: "30 09 * * 1-5"
+  schedule: "45 09 * * 1-5"
   timezone: "America/New_York"
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
