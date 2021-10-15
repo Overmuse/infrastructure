@@ -38,6 +38,13 @@ spec:
                 name: kafka
             - configMapRef:
                 name: kafka
+          livenessProbe:
+              httpGet:
+                  path: /health_check
+                  port: 8010
+                  initialDelaySeconds: 3
+                  periodSeconds: 3
+
 ---
 apiVersion: v1
 kind: Service
