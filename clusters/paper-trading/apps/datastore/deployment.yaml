@@ -42,8 +42,8 @@ spec:
               httpGet:
                   path: /health_check
                   port: 8010
-                  initialDelaySeconds: 3
-                  periodSeconds: 3
+              initialDelaySeconds: 3
+              periodSeconds: 3
 
 ---
 apiVersion: v1
