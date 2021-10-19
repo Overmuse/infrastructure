@@ -32,14 +32,14 @@ spec:
         app: polygon-data-relay
     spec:
       containers:
-      - name: polygon-data-relay
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/polygon-data-relay:v1.3.0 # {"$imagepolicy": "flux-system:polygon-data-relay"}
-        envFrom:
-        - configMapRef:
-            name: polygon-data-relay
-        - configMapRef:
-            name: kafka
-        - secretRef:
-            name: kafka
-        - secretRef:
-            name: polygon
+        - name: polygon-data-relay
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/polygon-data-relay:v1.4.0 # {"$imagepolicy": "flux-system:polygon-data-relay"}
+          envFrom:
+            - configMapRef:
+                name: polygon-data-relay
+            - configMapRef:
+                name: kafka
+            - secretRef:
+                name: kafka
+            - secretRef:
+                name: polygon
