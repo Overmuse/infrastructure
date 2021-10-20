@@ -6,6 +6,7 @@ resources:
     - ../base/config
     - ../base/alpaca-data-relay
     - ../base/trader
+    - ../base/timekeeper
 patchesStrategicMerge:
   - ecr-credentials.yaml
   - config.yaml
