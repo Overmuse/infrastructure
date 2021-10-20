@@ -6,6 +6,13 @@ data:
   ALPACA__BASE_URL: https://api.alpaca.markets/v2
   ALPACA__STREAMING_URL: wss://api.alpaca.markets/stream 
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka
+data:
+  KAFKA__BOOTSTRAP_SERVERS: pkc-4nym6.us-east-1.aws.confluent.cloud:9092
+---
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
