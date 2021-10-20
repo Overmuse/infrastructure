@@ -4,4 +4,3 @@ resources:
   - aws-flux-credentials-secret-flux-system.yaml
   - aws-flux-credentials-secret.yaml
   - ecr-sync.yaml
-  - kubeseal.pem
