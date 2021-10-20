@@ -7,3 +7,4 @@ resources:
       #- ../base/alpaca-data-relay
 patchesStrategicMerge:
   - ecr-credentials.yaml
+  - config.yaml
