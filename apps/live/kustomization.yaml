@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
     - ../base/alpaca-data-relay
     - ../base/ecr-credentials-sync
+    - ../base/sealed-secrets
