@@ -4,3 +4,5 @@ resources:
     - ../base/sealed-secrets
     - ../base/ecr-credentials-sync
       #- ../base/alpaca-data-relay
+patchesStrategicMerge:
+  - ecr-credentials.yaml
