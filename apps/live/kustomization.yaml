@@ -3,5 +3,3 @@ kind: Kustomization
 namespace: paper
 resources:
     - ../base/alpaca-data-relay
-patchesStrategicMerge:
-    - alpaca-data-relay-values.yaml
