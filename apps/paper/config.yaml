@@ -1,3 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alpaca
+data:
+  ALPACA__BASE_URL: https://paper-api.alpaca.markets/v2
+  ALPACA__STREAMING_URL: wss://paper-api.alpaca.markets/stream 
+---
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
