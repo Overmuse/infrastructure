@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
     - ../base/sealed-secrets
     - ../base/ecr-credentials-sync
-      #- ../base/alpaca-data-relay
+    - ../base/config
 patchesStrategicMerge:
   - ecr-credentials.yaml
+  - config.yaml
