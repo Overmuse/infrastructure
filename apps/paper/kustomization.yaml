@@ -5,6 +5,7 @@ resources:
     - ../base/ecr-credentials-sync
     - ../base/config
     - ../base/alpaca-data-relay
+    - ../base/trader
 patchesStrategicMerge:
   - ecr-credentials.yaml
   - config.yaml
