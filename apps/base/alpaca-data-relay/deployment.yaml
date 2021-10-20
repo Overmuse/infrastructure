@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alpaca-data-relay-base
+data:
+  KAFKA__GROUP_ID: alpaca-data-relay
+  ALPACA__ACCOUNT_UPDATES: "true"
+  ALPACA__TRADE_UPDATES: "true"
+  SENTRY__ADDRESS: https://200a764c48b1425595284ae6cb226303@o515476.ingest.sentry.io/5723647
+  RUST_LOG: alpaca_data_relay=debug
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpaca-data-relay-base
+spec:
+  selector:
+    matchLabels:
+      app: alpaca-data-relay-base
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: alpaca-data-relay-base
+    spec:
+      containers:
+        - name: alpaca-data-relay
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:v1.3.0 # {"$imagepolicy": "flux-system:alpaca-data-relay-base"}
+          envFrom:
+            - configMapRef:
+                name: alpaca-base
+            - configMapRef:
+                name: alpaca-data-relay-base
+            - configMapRef:
+                name: kafka-base
+            - secretRef:
+                name: kafka-base
+            - secretRef:
+                name: alpaca-base

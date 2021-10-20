@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpaca-data-relay-paper
+spec:
+  selector:
+    matchLabels:
+      app: alpaca-data-relay-paper
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: alpaca-data-relay-paper
+    spec:
+      containers:
+        - name: alpaca-data-relay
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:v1.3.0 # {"$imagepolicy": "flux-system:alpaca-data-relay-paper"}
+          envFrom:
+            - configMapRef:
+                name: alpaca-paper
+            - configMapRef:
+                name: alpaca-data-relay-base
+            - configMapRef:
+                name: kafka-paper
+            - secretRef:
+                name: kafka-paper
+            - secretRef:
+                name: alpaca-paper
