@@ -8,4 +8,4 @@ spec:
     name: jump-diffusion
   policy:
     semver:
-      range: 0.9.x
+      range: 0.9.0

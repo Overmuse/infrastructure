@@ -5,13 +5,13 @@ resources:
   - ../base/ecr-credentials-sync
   - ../base/cronjobber
   - ../base/config
+  - ../base/metrics
+  - ../base/monitoring
   - alpaca-data-relay
   - datastore
   - double-trouble
   - jump-diffusion
-  - ../base/metrics
   - microprice
-  - ../base/monitoring
   - order-manager
   - polygon-data-relay
   - reporting

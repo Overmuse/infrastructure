@@ -1,11 +1,11 @@
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImagePolicy
 metadata:
-  name: jump-diffusion
+  name: tca
   namespace: flux-system
 spec:
   imageRepositoryRef:
-    name: jump-diffusion
+    name: tca
   policy:
     semver:
-      range: 0.9.x
+      range: 1.2.0

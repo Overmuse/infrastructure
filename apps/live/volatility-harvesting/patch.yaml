@@ -1,3 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jump-diffusion
+data:
+  APP__INITIAL_EQUITY: "25000"
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:

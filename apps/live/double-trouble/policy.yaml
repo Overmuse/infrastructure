@@ -9,7 +9,7 @@ spec:
     name: double-trouble
   policy:
     semver:
-      range: 0.4.x
+      range: 0.4.7
 ---
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImagePolicy
@@ -21,4 +21,4 @@ spec:
     name: double-trouble-jl
   policy:
     semver:
-      range: 0.1.x
+      range: 0.1.2

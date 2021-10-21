@@ -1,13 +1,25 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - alpaca-data-relay
   - ../base/sealed-secrets
   - ../base/ecr-credentials-sync
   - ../base/cronjobber
   - ../base/config
-  - ../base/trader
-  - ../base/timekeeper
+  - ../base/metrics
+  - ../base/monitoring
+  - alpaca-data-relay
+  - datastore
+  - double-trouble
+  - jump-diffusion
+  - microprice
+  - order-manager
+  - polygon-data-relay
+  - reporting
+  - risk-manager
+  - tca
+  - timekeeper
+  - trader
+  - volatility-harvesting
 patchesStrategicMerge:
   - ecr-credentials.yaml
   - config.yaml

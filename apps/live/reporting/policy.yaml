@@ -1,11 +1,11 @@
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImagePolicy
 metadata:
-  name: jump-diffusion
+  name: reporting
   namespace: flux-system
 spec:
   imageRepositoryRef:
-    name: jump-diffusion
+    name: reporting
   policy:
     semver:
-      range: 0.9.x
+      range: 0.3.0

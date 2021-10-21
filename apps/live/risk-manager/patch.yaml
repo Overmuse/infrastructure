@@ -1,0 +1,13 @@
+apiVersion: cronjobber.hidde.co/v1alpha1
+kind: TZCronJob
+metadata:
+  name: risk-manager
+spec:
+  schedule: "00 09 * * 1-5"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: risk-manager
+              image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/risk-manager:v0.4.0 # {"$imagepolicy": "flux-system:risk-manager"}
