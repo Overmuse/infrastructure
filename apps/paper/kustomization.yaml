@@ -7,6 +7,8 @@ resources:
     - ../base/config
     - ../base/alpaca-data-relay
     - ../base/datastore
+    - ../base/double-trouble
+    - ../base/jump-diffusion
     - ../base/microprice
     - ../base/order-manager
     - ../base/polygon-data-relay
