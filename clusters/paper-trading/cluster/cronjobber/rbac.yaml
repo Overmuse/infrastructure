@@ -36,4 +36,3 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: cronjobber
-    namespace: cronjobber
