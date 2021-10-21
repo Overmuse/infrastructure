@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: datastore
+spec:
+  template:
+    spec:
+      containers:
+        - name: datastore
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/datastore-server:v0.5.0 # {"$imagepolicy": "flux-system:datastore"}
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: datastore
+  namespace: flux-system
+spec:
+  policy:
+    semver:
+      range: 0.5.x

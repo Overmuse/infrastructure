@@ -7,7 +7,4 @@ metadata:
 spec:
   imageRepositoryRef:
     name: datastore
-  policy:
-    semver:
-      range: 0.5.x
 
