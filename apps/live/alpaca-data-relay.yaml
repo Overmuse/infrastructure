@@ -7,4 +7,14 @@ spec:
   policy:
     semver:
       range: 1.2.x
-
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpaca-data-relay
+spec:
+  template:
+    spec:
+      containers:
+        - name: alpaca-data-relay
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:v1.3.0 # {"$imagepolicy": "flux-system:alpaca-data-relay"}
