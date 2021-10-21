@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: jump-diffusion
+  name: volatility-harvesting
 data:
   APP__INITIAL_EQUITY: "25000"
 ---
