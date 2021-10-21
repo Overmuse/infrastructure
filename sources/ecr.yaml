@@ -1,0 +1,155 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: alpaca-data-relay
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: datastore
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/datastore-server
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: double-trouble
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: double-trouble-jl
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble-jl
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: jump-diffusion
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/jump-diffusion
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: microprice
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/microprice
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: order-manager
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: polygon-data-relay
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/polygon-data-relay
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: reporting
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/reporting
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: risk-manager
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/risk-manager
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: tca
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/tca
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: timekeeper
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/timekeeper
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: trader
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trader
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
+  name: volatility-harvesting
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/volatility-harvesting
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+
