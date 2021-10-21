@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
     - ../base/sealed-secrets
     - ../base/ecr-credentials-sync
+    - ../base/cronjobber
     - ../base/config
     - ../base/alpaca-data-relay
     - ../base/trader
