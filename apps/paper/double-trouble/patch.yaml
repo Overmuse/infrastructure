@@ -13,23 +13,3 @@ spec:
       containers:
         - name: double-trouble
           image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.4.7 # {"$imagepolicy": "flux-system:double-trouble"}
----
-apiVersion: image.toolkit.fluxcd.io/v1alpha1
-kind: ImagePolicy
-metadata:
-  name: double-trouble
-  namespace: flux-system
-spec:
-  policy:
-    semver:
-      range: 0.4.x
----
-apiVersion: image.toolkit.fluxcd.io/v1alpha1
-kind: ImagePolicy
-metadata:
-  name: double-trouble-jl
-  namespace: flux-system
-spec:
-  policy:
-    semver:
-      range: 0.1.x
