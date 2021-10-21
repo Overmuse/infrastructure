@@ -15,7 +15,7 @@ resources:
   - order-manager
   - polygon-data-relay
   - reporting
-  - ../base/risk-manager
+  - risk-manager
   - ../base/tca
   - ../base/timekeeper
   - ../base/trader
@@ -23,4 +23,3 @@ resources:
 patchesStrategicMerge:
   - ecr-credentials.yaml
   - config.yaml
-  - risk-manager.yaml
