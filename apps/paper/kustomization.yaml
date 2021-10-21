@@ -9,6 +9,7 @@ resources:
     - ../base/datastore
     - ../base/double-trouble
     - ../base/jump-diffusion
+    - ../base/metrics
     - ../base/microprice
     - ../base/monitoring
     - ../base/order-manager
