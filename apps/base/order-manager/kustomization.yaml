@@ -4,4 +4,3 @@ resources:
   - database.yaml
   - deployment.yaml
   - policy.yaml
-  - registry.yaml
