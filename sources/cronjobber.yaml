@@ -1,7 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: HelmRepository
-metadata:
-  name: cronjobber
-spec:
-  interval: 5m
-  url: https://github.com/hiddeco/cronjobber
