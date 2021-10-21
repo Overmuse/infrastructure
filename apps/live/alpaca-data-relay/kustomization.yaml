@@ -4,5 +4,3 @@ resources:
     - ../../base/alpaca-data-relay
 patchesStrategicMerge:
   - version.yaml
-  - config.yaml
-  - alpaca-data-relay.yaml
