@@ -6,6 +6,8 @@ resources:
     - ../base/cronjobber
     - ../base/config
     - ../base/alpaca-data-relay
+    - ../base/datastore
+    - ../base/risk-manager
     - ../base/trader
     - ../base/timekeeper
 patchesStrategicMerge:
