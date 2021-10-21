@@ -14,7 +14,7 @@ resources:
   - ../base/monitoring
   - order-manager
   - polygon-data-relay
-  - ../base/reporting
+  - reporting
   - ../base/risk-manager
   - ../base/tca
   - ../base/timekeeper
