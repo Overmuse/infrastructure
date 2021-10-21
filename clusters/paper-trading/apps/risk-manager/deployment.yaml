@@ -11,33 +11,33 @@ data:
   KAFKA__RETRIES: "3"
   REDIS__URL: redis://datastore-redis:6379
   RUST_LOG: risk_manager=trace
-    # ---
-    # apiVersion: cronjobber.hidde.co/v1alpha1
-    # kind: TZCronJob
-    # metadata:
-    #   name: risk-manager
-    # spec:
-    #   schedule: "00 09 * * 1-5"
-    #   timezone: "America/New_York"
-    #   successfulJobsHistoryLimit: 1
-    #   failedJobsHistoryLimit: 1
-    #   jobTemplate:
-    #     spec:
-    #       template:
-    #         spec:
-    #           containers:
-    #             - name: risk-manager
-    #               image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/risk-manager:v0.4.0 # {"$imagepolicy": "flux-system:risk-manager"}
-    #               env:
-    #               envFrom:
-    #                 - configMapRef:
-    #                     name: alpaca
-    #                 - secretRef:
-    #                     name: alpaca
-    #                 - configMapRef:
-    #                     name: kafka
-    #                 - secretRef:
-    #                     name: kafka
-    #                 - configMapRef:
-    #                     name: risk-manager
-    #           restartPolicy: OnFailure
+---
+apiVersion: cronjobber.hidde.co/v1alpha1
+kind: TZCronJob
+metadata:
+  name: risk-manager
+spec:
+  schedule: "00 09 * * 1-5"
+  timezone: "America/New_York"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: risk-manager
+              image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/risk-manager:v0.4.0 # {"$imagepolicy": "flux-system:risk-manager"}
+              env:
+              envFrom:
+                - configMapRef:
+                    name: alpaca
+                - secretRef:
+                    name: alpaca
+                - configMapRef:
+                    name: kafka
+                - secretRef:
+                    name: kafka
+                - configMapRef:
+                    name: risk-manager
+          restartPolicy: OnFailure
