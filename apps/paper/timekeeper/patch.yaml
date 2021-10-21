@@ -1,10 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1beta1
+kind: CronJob
 metadata:
   name: timekeeper
 spec:
-  template:
+  jobTemplate:
     spec:
-      containers:
-        - name: timekeeper
-          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/timekeeper:v1.0.0 # {"$imagepolicy": "flux-system:timekeeper"}
+      template:
+        spec:
+          containers:
+            - name: timekeeper
+              image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/timekeeper:v1.0.0 # {"$imagepolicy": "flux-system:timekeeper"}
