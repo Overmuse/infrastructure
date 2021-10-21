@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trader
+spec:
+  template:
+    spec:
+      containers:
+        - name: trader
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trader:v2.0.2 # {"$imagepolicy": "flux-system:trader"}

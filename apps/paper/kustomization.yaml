@@ -18,7 +18,7 @@ resources:
   - risk-manager
   - tca
   - timekeeper
-  - ../base/trader
+  - trader
   - ../base/volatility-harvesting
 patchesStrategicMerge:
   - ecr-credentials.yaml
