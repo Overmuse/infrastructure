@@ -1,0 +1,6 @@
+apiVersion: cronjobber.hidde.co/v1alpha1
+kind: TZCronJob
+metadata:
+  name: double-trouble
+spec:
+  schedule: "49 13 * * 1-5"
