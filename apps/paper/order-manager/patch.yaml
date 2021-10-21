@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-manager
+spec:
+  template:
+    spec:
+      containers:
+        - name: order-manager
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v11.3.1 # {"$imagepolicy": "flux-system:order-manager"}

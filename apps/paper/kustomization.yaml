@@ -12,7 +12,7 @@ resources:
   - ../base/metrics
   - microprice
   - ../base/monitoring
-  - ../base/order-manager
+  - order-manager
   - ../base/polygon-data-relay
   - ../base/reporting
   - ../base/risk-manager

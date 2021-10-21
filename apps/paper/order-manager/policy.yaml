@@ -1,4 +1,3 @@
----
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImagePolicy
 metadata:
@@ -10,4 +9,3 @@ spec:
   policy:
     semver:
       range: 11.3.x
-
