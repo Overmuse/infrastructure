@@ -17,4 +17,4 @@ spec:
     spec:
       containers:
         - name: alpaca-data-relay
-          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:v1.3.0 # {"$imagepolicy": "flux-system:alpaca-data-relay"}
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/alpaca-data-relay:v1.2.0 # {"$imagepolicy": "flux-system:alpaca-data-relay"}
