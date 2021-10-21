@@ -1,15 +1,18 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: TZCronJob
 metadata:
   name: double-trouble
 spec:
-  template:
+  schedule: "30 09 * * 1-5"
+  jobTemplate:
     spec:
-      initContainers:
-        - name: double-trouble
-          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.4.7 # {"$imagepolicy": "flux-system:double-trouble"}
-        - name: process-data
-          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble-jl:v0.1.2 # {"$imagepolicy": "flux-system:double-trouble-jl"}
-      containers:
-        - name: double-trouble
-          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.4.7 # {"$imagepolicy": "flux-system:double-trouble"}
+      template:
+        spec:
+          initContainers:
+            - name: double-trouble
+              image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.4.7 # {"$imagepolicy": "flux-system:double-trouble"}
+            - name: process-data
+              image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble-jl:v0.1.2 # {"$imagepolicy": "flux-system:double-trouble-jl"}
+          containers:
+            - name: double-trouble
+              image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.4.7 # {"$imagepolicy": "flux-system:double-trouble"}
