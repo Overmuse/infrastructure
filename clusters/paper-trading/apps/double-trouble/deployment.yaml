@@ -13,94 +13,94 @@ data:
   RUST_LOG: double_trouble=debug
   POLYGON_BASE_URL: https://api.polygon.io
   IEX_BASE_URL: https://cloud.iexapis.com/stable
----
-apiVersion: cronjobber.hidde.co/v1alpha1
-kind: TZCronJob
-metadata:
-  name: double-trouble
-spec:
-  schedule: "30 09 * * 1-5"
-  timezone: "America/New_York"
-  successfulJobsHistoryLimit: 1
-  failedJobsHistoryLimit: 1
-  jobTemplate:
-    metadata:
-      labels:
-        app: double-trouble
-    spec:
-      template:
-        spec:
-          initContainers:
-            - name: download-data
-              image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.4.7 # {"$imagepolicy": "flux-system:double-trouble"}
-              env:
-                - name: APP__RUN_MODE
-                  value: "download"
-                - name: APP__OUT_FILE
-                  value: "/config/data.json"
-                - name: POLYGON_TOKEN
-                  valueFrom:
-                    secretKeyRef:
-                      name: polygon
-                      key: POLYGON__KEY_ID
-              envFrom:
-                - configMapRef:
-                    name: double-trouble
-                - configMapRef:
-                    name: kafka
-                - secretRef:
-                    name: kafka
-                - secretRef:
-                    name: iex
-              volumeMounts:
-                - name: config
-                  mountPath: /config
-              command:
-                - /bin/sh
-                - -c
-                - /usr/local/bin/double-trouble
-            - name: process-data
-              image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble-jl:v0.1.2 # {"$imagepolicy": "flux-system:double-trouble-jl"}
-              env:
-                - name: IN_FILE
-                  value: "/config/data.json"
-                - name: OUT_FILE
-                  value: "/config/pairs.csv"
-              volumeMounts:
-                - name: config
-                  mountPath: /config
-              command:
-                - /bin/sh
-                - -c
-                - julia --project -e 'using DoubleTrouble; main()'
-          containers:
-            - name: double-trouble
-              image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.4.7 # {"$imagepolicy": "flux-system:double-trouble"}
-              env:
-                - name: APP__RUN_MODE
-                  value: "run"
-                - name: APP__DATA_FILE
-                  value: "/config/pairs.csv"
-                - name: POLYGON_TOKEN
-                  valueFrom:
-                    secretKeyRef:
-                      name: polygon
-                      key: POLYGON__KEY_ID
-              envFrom:
-                - configMapRef:
-                    name: double-trouble
-                - configMapRef:
-                    name: kafka
-                - secretRef:
-                    name: kafka
-              volumeMounts:
-                - name: config
-                  mountPath: /config
-              command:
-                - /bin/sh
-                - -c
-                - /usr/local/bin/double-trouble
-          restartPolicy: OnFailure
-          volumes:
-            - name: config
-              emptyDir: {}
+    #---
+# apiVersion: cronjobber.hidde.co/v1alpha1
+# kind: TZCronJob
+# metadata:
+#   name: double-trouble
+# spec:
+#   schedule: "30 09 * * 1-5"
+#   timezone: "America/New_York"
+#   successfulJobsHistoryLimit: 1
+#   failedJobsHistoryLimit: 1
+#   jobTemplate:
+#     metadata:
+#       labels:
+#         app: double-trouble
+#     spec:
+#       template:
+#         spec:
+#           initContainers:
+#             - name: download-data
+#               image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.4.7 # {"$imagepolicy": "flux-system:double-trouble"}
+#               env:
+#                 - name: APP__RUN_MODE
+#                   value: "download"
+#                 - name: APP__OUT_FILE
+#                   value: "/config/data.json"
+#                 - name: POLYGON_TOKEN
+#                   valueFrom:
+#                     secretKeyRef:
+#                       name: polygon
+#                       key: POLYGON__KEY_ID
+#               envFrom:
+#                 - configMapRef:
+#                     name: double-trouble
+#                 - configMapRef:
+#                     name: kafka
+#                 - secretRef:
+#                     name: kafka
+#                 - secretRef:
+#                     name: iex
+#               volumeMounts:
+#                 - name: config
+#                   mountPath: /config
+#               command:
+#                 - /bin/sh
+#                 - -c
+#                 - /usr/local/bin/double-trouble
+#             - name: process-data
+#               image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble-jl:v0.1.2 # {"$imagepolicy": "flux-system:double-trouble-jl"}
+#               env:
+#                 - name: IN_FILE
+#                   value: "/config/data.json"
+#                 - name: OUT_FILE
+#                   value: "/config/pairs.csv"
+#               volumeMounts:
+#                 - name: config
+#                   mountPath: /config
+#               command:
+#                 - /bin/sh
+#                 - -c
+#                 - julia --project -e 'using DoubleTrouble; main()'
+#           containers:
+#             - name: double-trouble
+#               image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.4.7 # {"$imagepolicy": "flux-system:double-trouble"}
+#               env:
+#                 - name: APP__RUN_MODE
+#                   value: "run"
+#                 - name: APP__DATA_FILE
+#                   value: "/config/pairs.csv"
+#                 - name: POLYGON_TOKEN
+#                   valueFrom:
+#                     secretKeyRef:
+#                       name: polygon
+#                       key: POLYGON__KEY_ID
+#               envFrom:
+#                 - configMapRef:
+#                     name: double-trouble
+#                 - configMapRef:
+#                     name: kafka
+#                 - secretRef:
+#                     name: kafka
+#               volumeMounts:
+#                 - name: config
+#                   mountPath: /config
+#               command:
+#                 - /bin/sh
+#                 - -c
+#                 - /usr/local/bin/double-trouble
+#           restartPolicy: OnFailure
+#           volumes:
+#             - name: config
+#               emptyDir: {}
