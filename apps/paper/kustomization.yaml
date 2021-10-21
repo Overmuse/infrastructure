@@ -4,23 +4,23 @@ resources:
     - ../base/sealed-secrets
     - ../base/ecr-credentials-sync
     - ../base/cronjobber
-      #- ../base/config
-      #- ../base/alpaca-data-relay
-      #- ../base/datastore
-      #- ../base/double-trouble
-      #- ../base/jump-diffusion
-      #- ../base/metrics
-      #- ../base/microprice
-      #- ../base/monitoring
-      #- ../base/order-manager
-      #- ../base/polygon-data-relay
-      #- ../base/reporting
-      #- ../base/risk-manager
-      #- ../base/tca
-      #- ../base/timekeeper
-      #- ../base/trader
-      #- ../base/volatility-harvesting
+    - ../base/config
+    - ../base/alpaca-data-relay
+    - ../base/datastore
+    - ../base/double-trouble
+    - ../base/jump-diffusion
+    - ../base/metrics
+    - ../base/microprice
+    - ../base/monitoring
+    - ../base/order-manager
+    - ../base/polygon-data-relay
+    - ../base/reporting
+    - ../base/risk-manager
+    - ../base/tca
+    - ../base/timekeeper
+    - ../base/trader
+    - ../base/volatility-harvesting
 patchesStrategicMerge:
   - ecr-credentials.yaml
-  #- config.yaml
-  #- alpaca-data-relay.yaml
+  - config.yaml
+  - alpaca-data-relay.yaml
