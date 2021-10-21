@@ -16,7 +16,7 @@ resources:
   - polygon-data-relay
   - reporting
   - risk-manager
-  - ../base/tca
+  - tca
   - ../base/timekeeper
   - ../base/trader
   - ../base/volatility-harvesting
