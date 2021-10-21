@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
     - ../../base/alpaca-data-relay
 patchesStrategicMerge:
-  - version.yaml
+  - patch.yaml
