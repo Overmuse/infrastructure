@@ -7,3 +7,6 @@ metadata:
 spec:
   imageRepositoryRef:
     name: alpaca-data-relay
+  policy:
+    semver:
+      range: RANGE
