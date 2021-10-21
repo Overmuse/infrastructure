@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: microprice
-        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/microprice:v1.0.0 # {"$imagepolicy": "flux-system:microprice"}
+        image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/microprice
         envFrom:
         - secretRef:
             name: kafka
