@@ -11,3 +11,4 @@ resources:
 patchesStrategicMerge:
   - ecr-credentials.yaml
   - config.yaml
+  - alpaca-data-relay.yaml
