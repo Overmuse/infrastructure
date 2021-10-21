@@ -7,9 +7,15 @@ resources:
     - ../base/config
     - ../base/alpaca-data-relay
     - ../base/datastore
+    - ../base/microprice
+    - ../base/order-manager
+    - ../base/polygon-data-relay
+    - ../base/reporting
     - ../base/risk-manager
-    - ../base/trader
+    - ../base/tca
     - ../base/timekeeper
+    - ../base/trader
+    - ../base/volatility-harvesting
 patchesStrategicMerge:
   - ecr-credentials.yaml
   - config.yaml
