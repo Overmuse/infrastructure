@@ -10,6 +10,7 @@ resources:
     - ../base/double-trouble
     - ../base/jump-diffusion
     - ../base/microprice
+    - ../base/monitoring
     - ../base/order-manager
     - ../base/polygon-data-relay
     - ../base/reporting
