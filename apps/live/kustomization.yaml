@@ -1,14 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-    - ../base/sealed-secrets
-    - ../base/ecr-credentials-sync
-    - ../base/cronjobber
-    - ../base/config
-    - ../base/alpaca-data-relay
-    - ../base/trader
-    - ../base/timekeeper
+  - alpaca-data-relay
+  - ../base/sealed-secrets
+  - ../base/ecr-credentials-sync
+  - ../base/cronjobber
+  - ../base/config
+  - ../base/trader
+  - ../base/timekeeper
 patchesStrategicMerge:
   - ecr-credentials.yaml
   - config.yaml
-  - alpaca-data-relay.yaml
