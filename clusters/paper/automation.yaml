@@ -20,5 +20,5 @@ spec:
     push:
       branch: main
   update:
-    path: ./clusters/paper
+    path: ./apps/paper
     strategy: Setters
