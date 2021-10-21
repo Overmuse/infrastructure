@@ -13,7 +13,7 @@ resources:
   - microprice
   - ../base/monitoring
   - order-manager
-  - ../base/polygon-data-relay
+  - polygon-data-relay
   - ../base/reporting
   - ../base/risk-manager
   - ../base/tca
