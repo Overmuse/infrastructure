@@ -1,0 +1,6 @@
+apiVersion: cronjobber.hidde.co/v1alpha1
+kind: TZCronJob
+metadata:
+  name: risk-manager
+spec:
+  schedule: "52 13 * * 1-5"

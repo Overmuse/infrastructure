@@ -25,3 +25,4 @@ patchesStrategicMerge:
   - config.yaml
   - alpaca-data-relay.yaml
   - double-trouble.yaml
+  - risk-manager.yaml
