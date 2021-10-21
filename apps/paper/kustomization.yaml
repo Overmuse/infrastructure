@@ -17,7 +17,7 @@ resources:
   - reporting
   - risk-manager
   - tca
-  - ../base/timekeeper
+  - timekeeper
   - ../base/trader
   - ../base/volatility-harvesting
 patchesStrategicMerge:

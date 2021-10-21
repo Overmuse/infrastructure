@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timekeeper
+spec:
+  template:
+    spec:
+      containers:
+        - name: timekeeper
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/timekeeper:v1.0.0 # {"$imagepolicy": "flux-system:timekeeper"}

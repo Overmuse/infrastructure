@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: reporting
-          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/reporting:v0.3.0 # {"$imagepolicy": "flux-system:reporting"}
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/reporting
           env:
             - name: APP__TARGET_ADDRESS
               valueFrom:

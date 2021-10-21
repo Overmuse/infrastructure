@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: tca
-          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/tca:v1.2.0 # {"$imagepolicy": "flux-system:tca"}
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/tca
           envFrom:
             - secretRef:
                 name: kafka
