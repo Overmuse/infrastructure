@@ -6,7 +6,7 @@ resources:
   - ../base/cronjobber
   - ../base/config
   - ../base/metrics
-  - ../base/monitoring
+    #- ../base/monitoring
   - alpaca-data-relay
   - datastore
   - double-trouble
