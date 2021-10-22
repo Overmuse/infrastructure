@@ -55,7 +55,7 @@ spec:
         app: order-manager-db
 		type: postgres
     spec:
-	  affinity:
+      affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - topologyKey: kubernetes.io/hostname
