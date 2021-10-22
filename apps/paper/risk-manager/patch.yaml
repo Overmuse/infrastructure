@@ -3,7 +3,7 @@ kind: TZCronJob
 metadata:
   name: risk-manager
 spec:
-  schedule: "00 09 * * 1-5"
+  schedule: "09 09 * * 1-5"
   jobTemplate:
     spec:
       template:
