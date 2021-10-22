@@ -16,4 +16,4 @@ spec:
       interval: 1m
   values:
     initdbScripts: 
-      order_manager_init.sql: "CREATE ROLE ordermanager WITH CREATEDB LOGIN PASSWORD 'password';"
+      order_manager_init.sql: CREATE USER ordermanager WITH PASSWORD 'password';
