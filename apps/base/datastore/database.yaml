@@ -53,7 +53,7 @@ spec:
     metadata:
       labels:
         app: datastore-db
-		type: postgres
+        type: postgres
     spec:
       affinity:
         podAntiAffinity:
