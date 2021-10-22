@@ -9,7 +9,7 @@ spec:
       template:
         spec:
           initContainers:
-            - name: double-trouble
+            - name: download-data
               image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/double-trouble:v0.4.7 # {"$imagepolicy": "flux-system:double-trouble"}
               env:
                 - name: APP__RUN_MODE
