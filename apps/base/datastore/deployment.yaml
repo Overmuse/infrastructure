@@ -35,6 +35,8 @@ spec:
             - configMapRef:
                 name: datastore
             - secretRef:
+                name: datastore-db-password
+            - secretRef:
                 name: kafka
             - configMapRef:
                 name: kafka

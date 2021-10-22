@@ -15,5 +15,5 @@ kind: ConfigMap
 metadata:
   name: datastore
 data:
-  DATABASE__URL: postgres://postgres:0Fq0C*F6DtAb^Ks^HsxdhZln@live.czn6pu2ebanr.us-east-1.rds.amazonaws.com:5432
+  DATABASE__URL: postgres://datastore@postgres-postgresql:5432
   DATABASE__NAME: datastore
