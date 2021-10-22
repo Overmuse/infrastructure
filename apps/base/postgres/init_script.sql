@@ -1,6 +1,7 @@
 CREATE ROLE "order-manager"
 CREATEDB
-LOGIN;
+LOGIN
+PASSWORD="password";
 
 CREATE DATABASE "order-manager"
 WITH
