@@ -17,11 +17,12 @@ spec:
                 name: order-manager
             - configMapRef:
                 name: kafka
+            - secretRef:
+                name: rds
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: order-manager
 data:
-  DATABASE__URL: postgres://postgres:0Fq0C*F6DtAb^Ks^HsxdhZln@live.czn6pu2ebanr.us-east-1.rds.amazonaws.com:5432
   DATABASE__NAME: order-manager
