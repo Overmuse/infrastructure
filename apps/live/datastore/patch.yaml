@@ -15,5 +15,5 @@ kind: ConfigMap
 metadata:
   name: datastore
 data:
-  DATABASE__URL: postgres://datastore@postgres-postgresql:5432
+  DATABASE__URL: postgres://postgres-postgresql:5432
   DATABASE__NAME: datastore
