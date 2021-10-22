@@ -10,3 +10,5 @@ resources:
   - slack-secret.yaml
   - rds.yaml
   - database-init-secret.yaml
+  - ordermanager-db-password.yaml
+  - datastore-db-password.yaml
