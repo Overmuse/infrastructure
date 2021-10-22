@@ -6,7 +6,6 @@ resources:
   - ../base/cronjobber
   - ../base/config
   - ../base/metrics
-  - ../base/postgres
     #- ../base/monitoring
   - alpaca-data-relay
   - datastore
