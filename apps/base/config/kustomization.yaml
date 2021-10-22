@@ -9,3 +9,4 @@ resources:
   - polygon-secret.yaml
   - slack-secret.yaml
   - rds.yaml
+  - database-init-secret.yaml
