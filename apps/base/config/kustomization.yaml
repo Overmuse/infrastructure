@@ -8,3 +8,4 @@ resources:
   - kafka-secret.yaml
   - polygon-secret.yaml
   - slack-secret.yaml
+  - rds.yaml
