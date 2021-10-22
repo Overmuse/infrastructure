@@ -15,7 +15,4 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    initdbScripts: 
-      order_manager_init.sql: CREATE USER ordermanager WITH PASSWORD 'password';
-      create_ordermanager_database.sql: CREATE DATABASE ordermanager;
-      grant_ordermananger_permissions.sql: GRANT ALL PRIVILEGES ON DATABASE ordermanager TO ordermanager;
+    initdbScriptsSecret: database-init
