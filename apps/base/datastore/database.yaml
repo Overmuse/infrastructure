@@ -53,7 +53,15 @@ spec:
     metadata:
       labels:
         app: datastore-db
+		type: postgres
     spec:
+	  affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - topologyKey: kubernetes.io/hostname
+            labelSelector:
+              matchLabels:
+                type: postgres
       containers:
       - name: postgres
         image: postgres:10.4
