@@ -1,8 +1,8 @@
-CREATE ROLE "order-manager"
+CREATE ROLE ordermanager
 CREATEDB
 LOGIN
-PASSWORD="password";
+PASSWORD 'password';
 
-CREATE DATABASE "order-manager"
+CREATE DATABASE ordermanager
 WITH
-    OWNER="order-manager";
+    OWNER=ordermanager;
