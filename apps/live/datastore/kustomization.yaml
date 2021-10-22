@@ -1,7 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base/datastore
+  - ../../base/datastore/deployment.yaml
+  - ../../base/datastore/redis.yaml
   - policy.yaml
 patchesStrategicMerge:
   - patch.yaml
