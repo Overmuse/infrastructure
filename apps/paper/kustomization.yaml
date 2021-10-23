@@ -4,10 +4,11 @@ resources:
   - ../base/sealed-secrets
   - ../base/ecr-credentials-sync
   - ../base/cronjobber
-  - ../base/config
   - ../base/metrics
+  - ../base/postgres
   - ../base/monitoring
   - alpaca-data-relay
+  - config
   - datastore
   - double-trouble
   - jump-diffusion
@@ -20,6 +21,3 @@ resources:
   - timekeeper
   - trader
   - volatility-harvesting
-patchesStrategicMerge:
-  - ecr-credentials.yaml
-  - config.yaml
