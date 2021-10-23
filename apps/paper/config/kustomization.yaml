@@ -18,10 +18,10 @@ configMapGenerator:
 secretGenerator:
 - name: alpaca
   type: Opaque
-    metadata:
-      annotations:
-        sealedsecrets.bitnami.com/managed: "true"
-        sealedsecrets.bitnami.com/namespace-wide: "true"
+  options:
+    annotations:
+      sealedsecrets.bitnami.com/managed: "true"
+      sealedsecrets.bitnami.com/namespace-wide: "true"
 patchesStrategicMerge:
   - aws-flux-credentials-secret.yaml
   - aws-flux-credentials-secret-flux-system.yaml
