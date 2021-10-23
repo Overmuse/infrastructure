@@ -35,6 +35,13 @@ secretGenerator:
     annotations:
       sealedsecrets.bitnami.com/managed: "true"
       sealedsecrets.bitnami.com/namespace-wide: "true"
+- name: aws-flux-credentials
+  namespace: flux-system
+  type: Opaque
+  options:
+    annotations:
+      sealedsecrets.bitnami.com/managed: "true"
+      sealedsecrets.bitnami.com/namespace-wide: "true"
 - name: database-init
   type: Opaque
   options:
@@ -72,6 +79,7 @@ secretGenerator:
       sealedsecrets.bitnami.com/managed: "true"
       sealedsecrets.bitnami.com/namespace-wide: "true"
 - name: slack-url
+  namespace: flux-system
   type: Opaque
   options:
     annotations:
