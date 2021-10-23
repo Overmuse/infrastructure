@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../base/config
 configurations:
-  - configuration/sealed-secret-config.yaml
+  - sealed-secret-config.yaml
 configMapGenerator:
 - name: alpaca
   literals:
