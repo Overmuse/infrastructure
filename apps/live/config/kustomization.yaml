@@ -71,7 +71,7 @@ secretGenerator:
     annotations:
       sealedsecrets.bitnami.com/managed: "true"
       sealedsecrets.bitnami.com/namespace-wide: "true"
-- name: slack
+- name: slack-url
   type: Opaque
   options:
     annotations:
