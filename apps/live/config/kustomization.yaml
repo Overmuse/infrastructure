@@ -5,8 +5,8 @@ resources:
 configMapGenerator:
 - name: alpaca-config-map
   literals:
-  - ALPACA__BASE_URL: https://api.alpaca.markets/v2
-  - ALPACA__STREAMING_URL: wss://api.alpaca.markets/stream 
+  - ALPACA__BASE_URL=https://api.alpaca.markets/v2
+  - ALPACA__STREAMING_URL=wss://api.alpaca.markets/stream 
 patchesStrategicMerge:
   #- alpaca-config-map.yaml
   - alpaca-secret.yaml
