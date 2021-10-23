@@ -4,4 +4,5 @@ resources:
   - ../../base/datastore
   - policy.yaml
 patchesStrategicMerge:
-  - patch.yaml
+  - replicas-patch.yaml
+  - version-patch.yaml

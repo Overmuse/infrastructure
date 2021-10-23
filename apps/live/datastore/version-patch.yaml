@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: datastore
+spec:
+  template:
+    spec:
+      containers:
+        - name: datastore
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/datastore-server:v0.5.0 # {"$imagepolicy": "flux-system:datastore"}
