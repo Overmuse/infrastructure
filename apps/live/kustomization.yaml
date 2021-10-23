@@ -9,6 +9,7 @@ resources:
   - ../base/postgres
     #- ../base/monitoring
   - alpaca-data-relay
+  - config
   - datastore
   - double-trouble
   - jump-diffusion
@@ -23,4 +24,3 @@ resources:
   - volatility-harvesting
 patchesStrategicMerge:
   - ecr-credentials.yaml
-  - config.yaml
