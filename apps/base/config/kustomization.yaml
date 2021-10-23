@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - alpaca-config-map.yaml
   - alpaca-secret.yaml
+  - aws-flux-credentials-secret-flux-system.yaml
+  - aws-flux-credentials-secret.yaml
   - iex-secret.yaml
   - kafka-config-map.yaml
   - kafka-secret.yaml

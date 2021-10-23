@@ -5,6 +5,8 @@ resources:
 patchesStrategicMerge:
   - alpaca-config-map.yaml
   - alpaca-secret.yaml
+  - aws-flux-credentials-secret.yaml
+  - aws-flux-credentials-secret-flux-system.yaml
   - database-init-secret.yaml
   - datastore-db-url-secret.yaml
   - iex-secret.yaml
