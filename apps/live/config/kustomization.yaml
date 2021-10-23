@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../base/config
 configMapGenerator:
-- name: alpaca-config-map
+- name: alpaca
   literals:
   - ALPACA__BASE_URL=https://api.alpaca.markets/v2
   - ALPACA__STREAMING_URL=wss://api.alpaca.markets/stream 
