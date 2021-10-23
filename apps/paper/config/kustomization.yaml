@@ -2,6 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base/config
+configurations:
+  - configuration/sealed-secret-config.yaml
 configMapGenerator:
 - name: alpaca
   literals:
@@ -11,6 +13,9 @@ configMapGenerator:
   literals:
   - KAFKA__BOOTSTRAP_SERVERS=pkc-4nym6.us-east-1.aws.confluent.cloud:9092
   - KAFKA__SECURITY_PROTOCOL=SASL_SSL
+secretGenerator:
+- name: alpaca
+  type: Opaque
 patchesStrategicMerge:
   - alpaca-secret.yaml
   - aws-flux-credentials-secret.yaml
