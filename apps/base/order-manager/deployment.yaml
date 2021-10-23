@@ -9,7 +9,6 @@ data:
   KAFKA__INPUT_TOPICS: overmuse-trades,position-intents,risk-check-response,time
   KAFKA__ACKS: "1"
   KAFKA__RETRIES: "3"
-  DATABASE__URL: postgres://postgresadmin:admin123@order-manager-db:5432
   DATABASE__NAME: postgresdb
   WEBSERVER__PORT: "8000"
   RUST_LOG: order_manager=trace
@@ -35,6 +34,8 @@ spec:
           envFrom:
             - secretRef:
                 name: kafka
+            - secretRef:
+                name: ordermanager-db-url
             - configMapRef:
                 name: order-manager
             - configMapRef:
