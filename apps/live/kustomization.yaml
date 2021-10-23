@@ -4,7 +4,6 @@ resources:
   - ../base/sealed-secrets
   - ../base/ecr-credentials-sync
   - ../base/cronjobber
-  - ../base/config
   - ../base/metrics
   - ../base/postgres
     #- ../base/monitoring
