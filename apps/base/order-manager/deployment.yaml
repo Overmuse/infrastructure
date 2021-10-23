@@ -5,7 +5,7 @@ metadata:
 data:
   APP__UNREPORTED_TRADE_EXPIRY_SECONDS: "300"
   DATASTORE__BASE_URL: http://datastore:8010
-  KAFKA__GROUP_ID: order-manager
+  KAFKA__GROUP_ID: ordermanager
   KAFKA__INPUT_TOPICS: overmuse-trades,position-intents,risk-check-response,time
   KAFKA__ACKS: "1"
   KAFKA__RETRIES: "3"

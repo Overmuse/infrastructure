@@ -19,10 +19,3 @@ spec:
                 name: order-manager
             - configMapRef:
                 name: kafka
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: order-manager
-data:
-  DATABASE__NAME: order-manager
