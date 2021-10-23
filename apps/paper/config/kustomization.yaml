@@ -1,8 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base/config
   - alpaca-secret.yaml
+  - aws-flux-credentials-secret.yaml
+  - aws-flux-credentials-secret-flux-system.yaml
+  - database-init-secret.yaml
+  - datastore-db-url-secret.yaml
+  - iex-secret.yaml
+  - kafka-secret.yaml
+  - ordermanager-db-url-secret.yaml
+  - polygon-secret.yaml
+  - slack-secret.yaml
 configurations:
   - sealed-secret-config.yaml
 configMapGenerator:
@@ -21,13 +29,51 @@ secretGenerator:
     annotations:
       sealedsecrets.bitnami.com/managed: "true"
       sealedsecrets.bitnami.com/namespace-wide: "true"
-patchesStrategicMerge:
-  - aws-flux-credentials-secret.yaml
-  - aws-flux-credentials-secret-flux-system.yaml
-  - database-init-secret.yaml
-  - datastore-db-url-secret.yaml
-  - iex-secret.yaml
-  - kafka-secret.yaml
-  - ordermanager-db-url-secret.yaml
-  - polygon-secret.yaml
-  - slack-secret.yaml
+- name: aws-flux-credentials
+  type: Opaque
+  options:
+    annotations:
+      sealedsecrets.bitnami.com/managed: "true"
+      sealedsecrets.bitnami.com/namespace-wide: "true"
+- name: database-init
+  type: Opaque
+  options:
+    annotations:
+      sealedsecrets.bitnami.com/managed: "true"
+      sealedsecrets.bitnami.com/namespace-wide: "true"
+- name: datastore-db-url
+  type: Opaque
+  options:
+    annotations:
+      sealedsecrets.bitnami.com/managed: "true"
+      sealedsecrets.bitnami.com/namespace-wide: "true"
+- name: iex 
+  type: Opaque
+  options:
+    annotations:
+      sealedsecrets.bitnami.com/managed: "true"
+      sealedsecrets.bitnami.com/namespace-wide: "true"
+- name: kafka
+  type: Opaque
+  options:
+    annotations:
+      sealedsecrets.bitnami.com/managed: "true"
+      sealedsecrets.bitnami.com/namespace-wide: "true"
+- name: ordermanager-db-url
+  type: Opaque
+  options:
+    annotations:
+      sealedsecrets.bitnami.com/managed: "true"
+      sealedsecrets.bitnami.com/namespace-wide: "true"
+- name: polygon
+  type: Opaque
+  options:
+    annotations:
+      sealedsecrets.bitnami.com/managed: "true"
+      sealedsecrets.bitnami.com/namespace-wide: "true"
+- name: slack-url
+  type: Opaque
+  options:
+    annotations:
+      sealedsecrets.bitnami.com/managed: "true"
+      sealedsecrets.bitnami.com/namespace-wide: "true"
