@@ -9,3 +9,13 @@ spec:
       containers:
         - name: order-manager
           image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/order-manager:v11.3.1 # {"$imagepolicy": "flux-system:order-manager"}
+          env:
+          envFrom:
+            - secretRef:
+                name: kafka
+            - secretRef:
+                name: ordermanager-db-url
+            - configMapRef:
+                name: order-manager
+            - configMapRef:
+                name: kafka
