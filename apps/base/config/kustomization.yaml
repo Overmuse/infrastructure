@@ -8,7 +8,6 @@ resources:
   - kafka-secret.yaml
   - polygon-secret.yaml
   - slack-secret.yaml
-  - rds.yaml
   - database-init-secret.yaml
   - ordermanager-db-url.yaml
   - datastore-db-url.yaml

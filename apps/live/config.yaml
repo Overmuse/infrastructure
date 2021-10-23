@@ -69,16 +69,6 @@ apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
   creationTimestamp: null
-  name: rds
-  namespace: default
-spec:
-  encryptedData:
-    DATABASE__URL: AgAEPvytUY/YSoQSRvh/6nE01z7z7BArXiNDtP35GTRPh/bcq0VcW+BmaQK3fkXEEXVRwkTw1kYnaSgN9sOYa1h8UtroSiPMEtlSLaRm7wTNcjCzf0NHgZRoJJ5HZNICh61aX9FaAihGfdXWSdkWSRbzx0JP7Q88igSDhFKBS2iOl854HFNj6/Aj7Ne9WOq1GpxqwbMZ4Vn5EhAfTUsm80TRN7DDVTUwuPIayhiLVdy1wLPnMoKKz+bgQJhq7IKEDrdVwGsHDbj1Z5aWBywLdXNT1Wkfzs0cRsjAfXYt/4qXvBsTrBzsheA2LssHNFM6YN6lt5nDiGoZkeP4uYDlG/CKaawxCyS/rIOHLNEIRVCnMH10zz1LHzrp2E3X5zdkDFN1uEIJii9VFR3ZdtEIP2lUUGptRev03DdA1GBJ6d21/D/B/2qAUyB8kOnOcrLutlbenK4dNHFlbFPjcpMPwb2NKWFjTpIk2IL8m0VoPSvXEDi8QQABpo1AXDLNoHP9TZ3larFVFyddIFyIXpQRi30VdEs7hnkZVgd9Qg7LkF6ORPWW+yKLAVsxjtn6an5NuVivnaZCvis8Rwv0ii+uPibHbiYOMG/QdXeZr7WdgBtqYg0W5OmSjN0yr8N0j3ejpMeCTs2GT9+0puGMp1Dn0+D5VnkHkt67tS++w9tqjqO8O0o2Zxu7oxHe1QPSQnhpSbU9iSd8Q6EJKrNToV5LICxlrsQh9PA0kZaiY1ysY+4igUSEZ6ZxKlPFuVIrWOzh42JlokHe+YYabqRzJ55AZeBNkVJGng2q8YLG4N/kzVCewX6emsLx0XomWTIUx/E+XQ==
----
-apiVersion: bitnami.com/v1alpha1
-kind: SealedSecret
-metadata:
-  creationTimestamp: null
   name: database-init
   namespace: default
 spec:
