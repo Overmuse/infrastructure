@@ -10,7 +10,7 @@ configMapGenerator:
 - name: kafka
   literals:
   - KAFKA__BOOTSTRAP_SERVERS=pkc-4nym6.us-east-1.aws.confluent.cloud:9092
-  - KAFKA__SECURITY_PROTOCOL=SASL
+  - KAFKA__SECURITY_PROTOCOL=SASL_SSL
 patchesStrategicMerge:
   - alpaca-secret.yaml
   - aws-flux-credentials-secret.yaml
