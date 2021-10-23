@@ -7,6 +7,9 @@ configMapGenerator:
   literals:
   - ALPACA__BASE_URL=https://paper-api.alpaca.markets/v2
   - ALPACA__STREAMING_URL=wss://paper-api.alpaca.markets/stream 
+- name: kafka
+  literals:
+  - KAFKA__BOOTSTRAP_SERVERS: pkc-4nym6.us-east-1.aws.confluent.cloud:9092
 patchesStrategicMerge:
   - alpaca-secret.yaml
   - aws-flux-credentials-secret.yaml
@@ -14,7 +17,6 @@ patchesStrategicMerge:
   - database-init-secret.yaml
   - datastore-db-url-secret.yaml
   - iex-secret.yaml
-  - kafka-config-map.yaml
   - kafka-secret.yaml
   - ordermanager-db-url-secret.yaml
   - polygon-secret.yaml
