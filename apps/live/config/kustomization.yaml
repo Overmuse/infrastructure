@@ -9,7 +9,7 @@ configMapGenerator:
   - ALPACA__STREAMING_URL=wss://api.alpaca.markets/stream 
 - name: kafka
   literals:
-  - KAFKA__BOOTSTRAP_SERVERS: pkc-4nym6.us-east-1.aws.confluent.cloud:9092
+  - KAFKA__BOOTSTRAP_SERVERS=pkc-4nym6.us-east-1.aws.confluent.cloud:9092
 patchesStrategicMerge:
   #- alpaca-config-map.yaml
   - alpaca-secret.yaml
