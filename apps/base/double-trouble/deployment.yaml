@@ -8,7 +8,6 @@ data:
   KAFKA__INPUT_TOPICS: second-aggregates,time
   KAFKA__GROUP_ID: double-trouble
   KAFKA__UNIQUE_ID: "true"
-  APP__CASH: "1000000"
   APP__TICKERS: APA,APC,BKR,BP,CLR,CNQ,COG,COP,CVE,CVX,DVN,E,ENB,EOG,EPD,EQNR,EQT,ET,HES,KMI,MPC,MPLX,MRO,OXY,PAA,PBR,PSX,PTR,PXD,RDS.A,SLB,SU,TOT,TRP,VLO,WMB,XOM
   RUST_LOG: double_trouble=debug
   POLYGON_BASE_URL: https://api.polygon.io
