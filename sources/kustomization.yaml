@@ -4,4 +4,5 @@ namespace: flux-system
 resources:
   - ecr.yaml
   - bitnami.yaml
+  - grafana.yaml
   - prometheus-community.yaml
