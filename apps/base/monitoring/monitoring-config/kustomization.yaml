@@ -4,13 +4,3 @@ namespace: flux-system
 resources:
   - podmonitor.yaml
   - servicemonitor.yaml
-configMapGenerator:
-  - name: flux-grafana-dashboards
-    files:
-      - ../grafana/dashboards/control-plane.json
-      - ../grafana/dashboards/cluster.json
-      - ../grafana/dashboards/double-trouble.json
-      - ../grafana/dashboards/trading.json
-    options:
-      labels:
-        grafana_dashboard: flux-system
