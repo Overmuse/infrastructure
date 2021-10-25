@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: grafana-datasources
-  namespace: flux-system
+  namespace: monitoring
 data:
   datasources.yaml: |-
     apiVersion: 1
