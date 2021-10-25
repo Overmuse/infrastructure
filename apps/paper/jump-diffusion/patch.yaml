@@ -16,15 +16,15 @@ spec:
                 - name: POLYGON_TOKEN
                   valueFrom:
                     secretKeyRef:
-                      name: polygon-46f8b28mk5
+                      name: polygon
                       key: POLYGON__KEY_ID
               envFrom:
                 - secretRef:
-                    name: kafka-46f8b28mk5
+                    name: kafka
                 - configMapRef:
                     name: jump-diffusion
                 - configMapRef:
-                    name: kafka-mg2mk6f7db
+                    name: kafka
               command:
                 - /bin/sh
                 - -c
