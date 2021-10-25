@@ -26,17 +26,17 @@ spec:
                 - name: POLYGON_TOKEN
                   valueFrom:
                     secretKeyRef:
-                      name: polygon
+                      name: polygon-46f8b28mk5
                       key: POLYGON__KEY_ID
               envFrom:
                 - configMapRef:
                     name: double-trouble
                 - configMapRef:
-                    name: kafka
+                    name: kafka-mg2mk6f7db
                 - secretRef:
-                    name: kafka
+                    name: kafka-46f8b28mk5
                 - secretRef:
-                    name: iex
+                    name: iex-46f8b28mk5
               volumeMounts:
                 - name: config
                   mountPath: /config
@@ -69,15 +69,15 @@ spec:
                 - name: POLYGON_TOKEN
                   valueFrom:
                     secretKeyRef:
-                      name: polygon
+                      name: polygon-46f8b28mk5
                       key: POLYGON__KEY_ID
               envFrom:
                 - configMapRef:
                     name: double-trouble
                 - configMapRef:
-                    name: kafka
+                    name: kafka-mg2mk6f7db
                 - secretRef:
-                    name: kafka
+                    name: kafka-46f8b28mk5
               volumeMounts:
                 - name: config
                   mountPath: /config
