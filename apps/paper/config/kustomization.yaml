@@ -13,6 +13,7 @@ resources:
   - polygon-secret.yaml
   - slack-secret.yaml
 configurations:
+  - tzcronjob-config.yaml
   - sealed-secret-config.yaml
 configMapGenerator:
 - name: alpaca
