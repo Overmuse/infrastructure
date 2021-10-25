@@ -3,7 +3,7 @@ kind: TZCronJob
 metadata:
   name: risk-manager
 spec:
-  schedule: "03 09 * * 1-5"
+  schedule: "15 09 * * 1-5"
   jobTemplate:
     spec:
       template:
@@ -14,13 +14,13 @@ spec:
               env:
               envFrom:
                 - configMapRef:
-                    name: alpaca
+                    name: alpaca-7425hgkm69
                 - secretRef:
-                    name: alpaca
+                    name: alpaca-46f8b28mk5
                 - configMapRef:
-                    name: kafka
+                    name: kafka-mg2mk6f7db
                 - secretRef:
-                    name: kafka
+                    name: kafka-46f8b28mk5
                 - configMapRef:
                     name: risk-manager
           restartPolicy: OnFailure
