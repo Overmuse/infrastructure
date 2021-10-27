@@ -7,7 +7,7 @@ resources:
   - ../base/ecr-credentials-sync
   - ../base/cronjobber
   - ../base/metrics
-    #- ../base/postgres
+  - ../base/postgres
   - ../base/redis
   - ../base/monitoring
   - alpaca-data-relay
@@ -33,5 +33,5 @@ configMapGenerator:
   literals:
   - KAFKA__BOOTSTRAP_SERVERS=pkc-4nym6.us-east-1.aws.confluent.cloud:9092
   - KAFKA__SECURITY_PROTOCOL=SASL_SSL
-    #patchesStrategicMerge:
-  #- database-secret-hack-patch.yaml
+patchesStrategicMerge:
+- database-secret-hack-patch.yaml
