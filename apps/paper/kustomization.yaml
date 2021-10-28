@@ -8,7 +8,7 @@ resources:
   - ../base/cronjobber
   - ../base/metrics
   - ../base/postgres
-  - ../base/redis
+    #- ../base/redis
   - ../base/monitoring
   - alpaca-data-relay
   - datastore
