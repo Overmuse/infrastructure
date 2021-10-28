@@ -10,7 +10,7 @@ kind: TZCronJob
 metadata:
   name: jump-diffusion
 spec:
-  schedule: "36 09 * * 1-5"
+  schedule: "41 09 * * 1-5"
   jobTemplate:
     spec:
       template:
