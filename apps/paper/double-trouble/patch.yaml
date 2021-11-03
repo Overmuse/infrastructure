@@ -10,7 +10,7 @@ kind: TZCronJob
 metadata:
   name: double-trouble
 spec:
-  schedule: "26 10 * * 1-5"
+  schedule: "54 09 * * 1-5"
   jobTemplate:
     spec:
       template:
