@@ -8,4 +8,4 @@ spec:
     name: order-manager
   policy:
     semver:
-      range: 12.0.x
+      range: 12.1.x
