@@ -25,5 +25,4 @@ kind: ConfigMap
 metadata:
   name: order-manager
 data:
-  SENTRY__DSN: https://53f98d7cfbc244a29f2935f8cd919bbe@o515476.ingest.sentry.io/6098923
   SENTRY__ENVIRONMENT: live
