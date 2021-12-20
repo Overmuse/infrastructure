@@ -19,3 +19,10 @@ spec:
                 name: order-manager
             - configMapRef:
                 name: kafka
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: order-manager
+data:
+  SENTRY__ENVIRONMENT: live
