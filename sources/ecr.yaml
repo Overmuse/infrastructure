@@ -134,6 +134,17 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImageRepository
 metadata:
+  name: trait-finance
+  namespace: flux-system
+spec:
+  image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trait-finance
+  interval: 1m0s
+  secretRef:
+    name: ecr-credentials
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageRepository
+metadata:
   name: trader
   namespace: flux-system
 spec:
