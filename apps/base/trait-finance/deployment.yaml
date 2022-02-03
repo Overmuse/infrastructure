@@ -34,12 +34,12 @@ spec:
                 name: trait-finance
             - secretRef:
                 name: trait-finance-db-url
-          livenessProbe:
-            httpGet:
-              path: /health_check
-              port: 8011
-            initialDelaySeconds: 3
-            periodSeconds: 3
+          # livenessProbe:
+          #   httpGet:
+          #     path: /health_check
+          #     port: 8011
+          #   initialDelaySeconds: 3
+          #   periodSeconds: 3
 ---
 apiVersion: v1
 kind: Service
