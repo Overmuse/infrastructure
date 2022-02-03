@@ -23,6 +23,7 @@ resources:
   - tca
   - timekeeper
   - trader
+  - trait-finance
   - volatility-harvesting
 configMapGenerator:
 - name: alpaca
