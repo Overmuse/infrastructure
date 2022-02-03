@@ -1,0 +1,11 @@
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: trait-finance
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: trait-finance
+  policy:
+    semver:
+      range: 0.1.x

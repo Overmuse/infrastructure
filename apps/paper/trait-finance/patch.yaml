@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trait-finance
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: trait-finance
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trait-finance:v0.1.0 # {"$imagepolicy": "flux-system:trait-finance"}
