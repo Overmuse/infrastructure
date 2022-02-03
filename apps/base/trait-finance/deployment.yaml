@@ -7,7 +7,7 @@ data:
   WEBSERVER__PORT: "8010"
   REDIS__URL: redis://trait-finance-redis:6379
   RUST_LOG: trait_finance=debug
-  APP_APPLICATION__BASE_URL: "http://overmu.se"
+  APP_APPLICATION__BASE_URL: "0.0.0.0:8010"
 ---
 apiVersion: apps/v1
 kind: Deployment
