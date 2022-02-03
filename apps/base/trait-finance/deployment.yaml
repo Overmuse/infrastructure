@@ -4,10 +4,10 @@ metadata:
   name: trait-finance
 data:
   DATABASE__NAME: trait-finance
-  WEBSERVER__PORT: "8010"
+  WEBSERVER__PORT: "8011"
   REDIS__URL: redis://trait-finance-redis:6379
   RUST_LOG: trait_finance=debug
-  APP_APPLICATION__BASE_URL: "0.0.0.0:8010"
+  APP_APPLICATION__BASE_URL: "0.0.0.0:8011"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -27,7 +27,7 @@ spec:
         - name: trait-finance
           image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trait-finance
           ports:
-            - containerPort: 8010
+            - containerPort: 8011
           env:
           envFrom:
             - configMapRef:
@@ -37,7 +37,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /health_check
-              port: 8010
+              port: 8011
             initialDelaySeconds: 3
             periodSeconds: 3
 ---
@@ -50,6 +50,6 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8010
+    - port: 8011
   selector:
     app: trait-finance
