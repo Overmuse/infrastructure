@@ -11,8 +11,8 @@ resources:
     #- ../base/monitoring
   - alpaca-data-relay
   - datastore
-    #- double-trouble
-    #- jump-diffusion
+  - double-trouble
+  - jump-diffusion
   - microprice
   - order-manager
   - polygon-data-relay
