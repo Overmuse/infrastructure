@@ -5,4 +5,5 @@ resources:
   - ecr.yaml
   - bitnami.yaml
   - grafana.yaml
+  - nginx.yaml
   - prometheus-community.yaml
