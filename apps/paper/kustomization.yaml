@@ -10,6 +10,7 @@ resources:
   - ../base/postgres
     #- ../base/redis
   - ../base/monitoring
+  - ../base/nginx
   - alpaca-data-relay
   - datastore
   - double-trouble
