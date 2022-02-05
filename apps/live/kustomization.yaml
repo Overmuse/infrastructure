@@ -10,19 +10,19 @@ resources:
   - ../base/postgres
   - secrets
     #- ../base/monitoring
-    # - alpaca-data-relay
-    # - datastore
-    # - double-trouble
-    # - jump-diffusion
-    # - microprice
-    # - order-manager
-    # - polygon-data-relay
-    # - reporting
-    # - risk-manager
-    # - tca
-    # - timekeeper
-    # - trader
-    # - volatility-harvesting
+  - alpaca-data-relay
+  - datastore
+  - double-trouble
+  - jump-diffusion
+  - microprice
+  - order-manager
+  - polygon-data-relay
+  - reporting
+  - risk-manager
+  - tca
+  - timekeeper
+  - trader
+  - volatility-harvesting
 configMapGenerator:
 - name: alpaca
   literals:
