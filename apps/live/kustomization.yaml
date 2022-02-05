@@ -8,6 +8,7 @@ resources:
   - ../base/cronjobber
   - ../base/metrics
   - ../base/postgres
+  - secrets
     #- ../base/monitoring
     # - alpaca-data-relay
     # - datastore
@@ -18,7 +19,6 @@ resources:
     # - polygon-data-relay
     # - reporting
     # - risk-manager
-    - secrets
     # - tca
     # - timekeeper
     # - trader
