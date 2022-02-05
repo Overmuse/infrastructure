@@ -18,7 +18,7 @@ resources:
     # - polygon-data-relay
     # - reporting
     # - risk-manager
-    # - secrets
+    - secrets
     # - tca
     # - timekeeper
     # - trader
