@@ -1,0 +1,28 @@
+# Create kubernetes infrastructure using terraform
+pushd ./terraform/aws/eks/live-trading
+terraform apply -auto-approve
+popd
+
+# Add new cluster to kubeconfig
+aws eks update-kubeconfig --region us-east-1 --name live-trading
+
+# Rename cluster context to `live`
+AWS_ACCOUNT_NUMBER=$(aws sts get-caller-identity --query Account --output text)
+kubectl config rename-context arn:aws:eks:us-east-1:${AWS_ACCOUNT_NUMBER}:cluster/live-trading live
+
+# Bootstrap flux installation
+GITHUB_TOKEN="$GITHUB_FLUX_TOKEN" flux bootstrap github \
+    --owner=Overmuse \
+    --repository=infrastructure \
+    --path=clusters/live  \
+    --components-extra=image-reflector-controller,image-automation-controller \
+    --read-write-key \
+    --token-auth
+
+# Reconcile flux installation
+flux reconcile kustomization --with-source flux-system
+# HERE WE NEED TO RECONCILE THE BASE REPO AND MAKE SURE SECRETS ARE CREATED
+
+# Sync aws credentials
+kubectl create job --from=cronjob/ecr-credentials-sync initial-sync -n flux-system
+kubectl wait --for=condition=complete job/initial-sync -n flux-system
