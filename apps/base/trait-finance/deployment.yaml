@@ -6,7 +6,7 @@ data:
   APP_DATABASE__DATABASE_NAME: trait-finance
   APP_APPLICATION__PORT: "8011"
   APP_REDIS_URI: redis://trait-finance-redis:6379
-  RUST_LOG: trait_finance=debug
+  RUST_LOG: debug
   APP_APPLICATION__BASE_URL: "http://overmu.se"
 ---
 apiVersion: apps/v1
