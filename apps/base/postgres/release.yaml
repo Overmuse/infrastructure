@@ -14,5 +14,5 @@ spec:
         name: bitnami
         namespace: flux-system
       interval: 1m
-  values:
-    initdbScriptsSecret: database-init
+  # values:
+  #   initdbScriptsSecret: database-init
