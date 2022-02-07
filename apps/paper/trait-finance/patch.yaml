@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
         - name: trait-finance
-          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trait-finance:v0.1.2 # {"$imagepolicy": "flux-system:trait-finance"}
+          image: 799439856592.dkr.ecr.us-east-1.amazonaws.com/trait-finance:v0.1.3 # {"$imagepolicy": "flux-system:trait-finance"}
