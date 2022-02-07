@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: overmu.se
+  - host: www.overmu.se
     http:
       paths:
       - path: /
