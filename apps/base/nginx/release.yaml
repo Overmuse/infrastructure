@@ -14,3 +14,7 @@ spec:
         name: nginx
         namespace: flux-system
       interval: 1m
+  values:
+    controller:
+      ingressClassResource:
+        default: true
