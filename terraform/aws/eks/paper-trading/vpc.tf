@@ -9,10 +9,10 @@
 resource "aws_vpc" "paper-trading" {
   cidr_block = "10.0.0.0/16"
 
-  tags = map(
-    "Name", "paper-trading-node",
-    "kubernetes.io/cluster/${var.cluster-name}", "shared",
-  )
+  tags = tomap({
+    "Name"="paper-trading-node",
+    "kubernetes.io/cluster/${var.cluster-name}"="shared",
+  })
 }
 
 resource "aws_subnet" "paper-trading" {
@@ -23,10 +23,10 @@ resource "aws_subnet" "paper-trading" {
   map_public_ip_on_launch = true
   vpc_id                  = aws_vpc.paper-trading.id
 
-  tags = map(
-    "Name", "paper-trading-node",
-    "kubernetes.io/cluster/${var.cluster-name}", "shared",
-  )
+  tags = tomap({
+    "Name"="paper-trading-node",
+    "kubernetes.io/cluster/${var.cluster-name}"="shared",
+  })
 }
 
 resource "aws_internet_gateway" "paper-trading" {
